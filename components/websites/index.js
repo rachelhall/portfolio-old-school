@@ -1,9 +1,11 @@
+import { motion } from "framer-motion";
+
 // styles
 import "./styles.module.scss";
 import { Fragment, useState } from "react";
 
 // components
-import SingleSite from "../../components/singleSite"
+import SingleSite from "../../components/singleSite";
 
 const Websites = () => {
   const [websitesOpen, toggleWebsitesOpen] = useState(false);
@@ -15,10 +17,17 @@ const Websites = () => {
     <Fragment>
       {websitesOpen ? (
         <div className="margin-container">
-          <div className="websites-window">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.25 }}
+            className="websites-window"
+          >
+            <p className="close-button" onClick={handleClick}>
+              &#10006;
+            </p>
             <SingleSite />
-            
-          </div>
+          </motion.div>
         </div>
       ) : (
         <div className="single-icon" onClick={handleClick}>

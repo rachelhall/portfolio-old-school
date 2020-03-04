@@ -66,6 +66,12 @@ img {
   --font-size-sm: 0.8rem;
   --desktop: 768px; }
 
+.icon-title {
+  margin-top: 0;
+  color: #222;
+  text-transform: capitalize;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+
 @media (prefers-color-scheme: light) {
   :root {
     --background: #ffffff;
@@ -88,8 +94,15 @@ body {
 body {
   background: #007576; }
 
+.stars {
+  background: url("/wallpaper/stars.png"); }
+
 div {
   font-family: 'Courier New', Courier, monospace; }
+
+.entire-display {
+  height: 100vh;
+  padding-top: 65px; }
 
 nav ul {
   display: flex; }
@@ -121,8 +134,9 @@ a {
   border: 3px solid #777;
   overflow-y: scroll;
   z-index: 9;
-  margin: 65px auto;
-  box-shadow: 6px 5px 10px -6px rgba(0, 0, 0, 0.75); }
+  margin: auto;
+  box-shadow: 6px 5px 10px -6px rgba(0, 0, 0, 0.75);
+  cursor: default; }
 
 h1, h2 {
   font-weight: 200;
@@ -144,6 +158,9 @@ li {
 img {
   width: 65px; }
 
+p.close-button {
+  color: #222; }
+
 p.icon-title {
   margin-top: 0;
   color: #222;
@@ -154,11 +171,12 @@ p.icon-title {
   margin: 2rem; }
 
 .websites-window {
+  display: inline-block;
   background: var(--white);
   width: 450px;
   height: 300px;
   padding: 1rem;
-  border: 3px solid #777;
+  border: 3px double #777;
   overflow-y: scroll;
   z-index: 9;
   margin: -95px auto;
@@ -170,6 +188,16 @@ p.icon-title {
 
 .websites-window li {
   color: var(--font-color); }
+
+img {
+  width: 65px; }
+
+.single-icon {
+  display: inline-block;
+  cursor: pointer; }
+
+.preferences-container {
+  z-index: 10; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

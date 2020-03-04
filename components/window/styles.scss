@@ -19,8 +19,9 @@ body {
     border: 3px solid #777;
     overflow-y: scroll;
     z-index: 9;
-    margin: 65px auto;
+    margin: auto;
     box-shadow: 6px 5px 10px -6px rgba(0,0,0,0.75);
+    cursor: default;
   }
   
   h1, h2 {

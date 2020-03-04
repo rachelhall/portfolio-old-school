@@ -58,6 +58,7 @@ const Window = ({ style }) => {
           <li>- Next JS</li>
           <li>- Vanilla JS</li>
           <li>- Cosmic JS</li>
+          <li>test item</li>
         </ul>
 
         <p>

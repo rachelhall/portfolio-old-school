@@ -1,5 +1,9 @@
 body {
-    background: #007576;
+    background: #007576; 
+}
+
+.stars {
+    background: url('/wallpaper/stars.png');
 }
 
 div {
@@ -7,5 +11,7 @@ div {
 }
 
 .entire-display {
+    height: 100vh;
+    padding-top: 65px;
    
 }

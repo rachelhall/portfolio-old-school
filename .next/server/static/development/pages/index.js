@@ -93,10 +93,10 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/Websites/index.js":
-/*!**************************************!*\
-  !*** ./components/Websites/index.js ***!
-  \**************************************/
+/***/ "./components/Preferences/index.js":
+/*!*****************************************!*\
+  !*** ./components/Preferences/index.js ***!
+  \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -104,84 +104,178 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styles_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.module.scss */ "./components/Websites/styles.module.scss");
-/* harmony import */ var _styles_module_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_module_scss__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/Websites/index.js";
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "framer-motion");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Wallpaper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Wallpaper */ "./components/Wallpaper/index.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.scss */ "./components/Preferences/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/Preferences/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-// styles
+ // components
+
+ // styles
 
 
 
-const Websites = () => {
+
+const Preferences = ({
+  setWallpaper
+}) => {
   const {
-    0: websitesOpen,
-    1: toggleWebsitesOpen
+    0: preferencesOpen,
+    1: togglePreferencesOpen
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
 
   function handleClick() {
-    toggleWebsitesOpen(!websitesOpen);
+    togglePreferencesOpen(!preferencesOpen);
     console.log(`the button was clicked`);
   }
 
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 16
     },
     __self: undefined
-  }, websitesOpen ? __jsx("div", {
+  }, preferencesOpen ? __jsx("div", {
     className: "margin-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 18
     },
     __self: undefined
-  }, __jsx("div", {
+  }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "preferences-container",
+    initial: {
+      scale: 0
+    },
+    animate: {
+      scale: 1
+    },
+    transition: {
+      duration: 0.25
+    },
     className: "websites-window",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 19
     },
     __self: undefined
-  })) : __jsx("div", {
+  }, __jsx("p", {
+    className: "close-button",
+    onClick: handleClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, "\u2716"), __jsx(_Wallpaper__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    setWallpaper: setWallpaper,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }))) : __jsx("div", {
     className: "single-icon",
     onClick: handleClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 32
     },
     __self: undefined
   }, __jsx("img", {
-    src: "/icon/folder.png",
-    alt: "web portfolio",
+    src: "/icon/mac.png",
+    alt: "preferences",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 33
     },
     __self: undefined
   }), __jsx("p", {
     className: "icon-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 34
     },
     __self: undefined
-  }, "websites")));
+  }, "preferences")));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Websites);
+/* harmony default export */ __webpack_exports__["default"] = (Preferences);
 
 /***/ }),
 
-/***/ "./components/Websites/styles.module.scss":
-/*!************************************************!*\
-  !*** ./components/Websites/styles.module.scss ***!
-  \************************************************/
+/***/ "./components/Preferences/styles.scss":
+/*!********************************************!*\
+  !*** ./components/Preferences/styles.scss ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ "./components/Wallpaper/index.js":
+/*!***************************************!*\
+  !*** ./components/Wallpaper/index.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/Wallpaper/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const Wallpaper = ({
+  setWallpaper
+}) => {
+  function setStars() {
+    setWallpaper("stars");
+    console.log("stars was clicked");
+  }
+
+  function setGreen() {
+    setWallpaper("green");
+  }
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, "Select Wallpaper"), __jsx("button", {
+    onClick: setGreen,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, "Green"), __jsx("div", {
+    onClick: setStars,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }, "Stars"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Wallpaper);
 
 /***/ }),
 
@@ -283,6 +377,165 @@ const Nav = () => {
 /*!************************************!*\
   !*** ./components/nav/styles.scss ***!
   \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./components/singleSite/index.js":
+/*!****************************************!*\
+  !*** ./components/singleSite/index.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/singleSite/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const SingleSite = () => {
+  return __jsx("div", {
+    className: "single-site",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: undefined
+  }, __jsx("a", {
+    href: "https://cocky-roentgen-cbc28d.netlify.com/",
+    target: "_blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: undefined
+  }, "Mariela"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SingleSite);
+
+/***/ }),
+
+/***/ "./components/websites/index.js":
+/*!**************************************!*\
+  !*** ./components/websites/index.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "framer-motion");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _styles_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.module.scss */ "./components/websites/styles.module.scss");
+/* harmony import */ var _styles_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_module_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_singleSite__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/singleSite */ "./components/singleSite/index.js");
+var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/websites/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // styles
+
+
+ // components
+
+
+
+const Websites = () => {
+  const {
+    0: websitesOpen,
+    1: toggleWebsitesOpen
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+
+  function handleClick() {
+    toggleWebsitesOpen(!websitesOpen);
+    console.log(`the button was clicked`);
+  }
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }, websitesOpen ? __jsx("div", {
+    className: "margin-container",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    initial: {
+      scale: 0
+    },
+    animate: {
+      scale: 1
+    },
+    transition: {
+      duration: 0.25
+    },
+    className: "websites-window",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "close-button",
+    onClick: handleClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: undefined
+  }, "\u2716"), __jsx(_components_singleSite__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }))) : __jsx("div", {
+    className: "single-icon",
+    onClick: handleClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }, __jsx("img", {
+    src: "/icon/folder.png",
+    alt: "web portfolio",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  }), __jsx("p", {
+    className: "icon-title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }, "websites")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Websites);
+
+/***/ }),
+
+/***/ "./components/websites/styles.module.scss":
+/*!************************************************!*\
+  !*** ./components/websites/styles.module.scss ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -406,10 +659,16 @@ const Window = ({
       lineNumber: 60
     },
     __self: undefined
-  }, "- Cosmic JS")), __jsx("p", {
+  }, "- Cosmic JS"), __jsx("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 61
+    },
+    __self: undefined
+  }, "test item")), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
     },
     __self: undefined
   }, "Thomas went from music teacher to tech. After years teaching university music classes, Thomas began revisiting a high school interest in web development and discovered the same type of creativity he loved about music abounded in the dev space."), __jsx("p", {
@@ -418,7 +677,7 @@ const Window = ({
     "data-type-max": "9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 70
     },
     __self: undefined
   }, "Outside of work, Thomas enjoys playing and recording music with friends and skateboarding/rollerblading."), __jsx("p", {
@@ -427,13 +686,13 @@ const Window = ({
     "data-type-max": "12",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 74
     },
     __self: undefined
   }, "Spending 15 years as a classical pianist taught Thomas the power of deep work and focused attention. Playing the piano is a lot more like coding than most people would think. It requires setting goals, working long, focused hours and self-evaluation. Classical pianists are good at identifying and learning new skills."), __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 82
     },
     __self: undefined
   })));
@@ -467,64 +726,83 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_draggable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-draggable */ "react-draggable");
 /* harmony import */ var react_draggable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_draggable__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _home_styles_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../home/styles.scss */ "./pages/home/styles.scss");
-/* harmony import */ var _home_styles_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_home_styles_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_window__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/window */ "./components/window/index.js");
-/* harmony import */ var _components_Websites__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Websites */ "./components/Websites/index.js");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! framer-motion */ "framer-motion");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _home_styles_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../home/styles.scss */ "./pages/home/styles.scss");
+/* harmony import */ var _home_styles_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_home_styles_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_window__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/window */ "./components/window/index.js");
+/* harmony import */ var _components_websites__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/websites */ "./components/websites/index.js");
+/* harmony import */ var _components_Preferences__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Preferences */ "./components/Preferences/index.js");
 var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/pages/home/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
  //componenets
 
 
 
 
+
 const Home = () => {
-  return __jsx("div", {
-    className: "entire-display",
+  const constraintsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  const {
+    0: wallpaper,
+    1: setWallpaper
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("green");
+  return __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
+    ref: constraintsRef,
+    className: wallpaper === "stars" ? "entire-display stars" : "entire-display",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 16
     },
     __self: undefined
-  }, __jsx(react_draggable__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
+    drag: true,
+    dragConstraints: constraintsRef,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 22
     },
     __self: undefined
-  }, __jsx("div", {
+  }, __jsx(_components_window__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 23
     },
     __self: undefined
-  }, __jsx(_components_window__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  })), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
+    drag: true,
+    dragConstraints: constraintsRef,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 26
     },
     __self: undefined
-  }))), __jsx(react_draggable__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, __jsx(_components_websites__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 27
     },
     __self: undefined
-  }, __jsx("div", {
+  })), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
+    drag: true,
+    dragConstraints: constraintsRef,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 29
     },
     __self: undefined
-  }, __jsx(_components_Websites__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_components_Preferences__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    setWallpaper: setWallpaper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 30
     },
     __self: undefined
-  }))));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
@@ -569,6 +847,17 @@ __webpack_require__.r(__webpack_exports__);
 
 module.exports = __webpack_require__(/*! /Users/thomasharbin/Documents/GitHub/portfolio-old-school/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "framer-motion":
+/*!********************************!*\
+  !*** external "framer-motion" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("framer-motion");
 
 /***/ }),
 
