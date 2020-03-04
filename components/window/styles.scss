@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a:hover {
+  background-color: #084FDD}
+ 
+  
+  .computer-screen {
+    // position: absolute;
+    background: #222;
+    width: 600px;
+    height: 400px;
+    padding: 1rem;
+    border: 3px solid #777;
+    overflow-y: scroll;
+    z-index: 9;
+  }
+  
+  h1, h2 {
+    font-weight: 200;
+    font-size: 1rem;
+  }
+  
+  p, h1, h2, li {
+    font-family: Courier;
+    color: #33ff00;
+    text-transform: uppercase;
+    letter-spacing: .35px;
+    list-style: none;
+  }
+  
+  p {
+    margin: 1.25rem 0;
+  }
+  li {
+    line-height: 1.5rem;
+  }
+  
+  nav ul {
+  
+    display: flex;
+  }
+  nav li {
+  
+    padding: .5rem;
+  }
