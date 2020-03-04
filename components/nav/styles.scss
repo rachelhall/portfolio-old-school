@@ -1,0 +1,17 @@
+nav ul {
+  
+    display: flex;
+  }
+  nav li {
+    padding: .5rem;
+    font-family: Courier;
+    color: #33ff00;
+    text-transform: uppercase;
+    letter-spacing: .35px;
+    list-style: none;
+  }
+
+  a:hover li {
+    background-color: #33ff00;
+    color: #222;
+  }

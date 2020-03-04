@@ -8,19 +8,19 @@ body {
     text-decoration: none;
   }
   
-  a:hover {
-  background-color: #084FDD}
+ 
  
   
-  .computer-screen {
-    // position: absolute;
+  .window {
     background: #222;
-    width: 600px;
-    height: 400px;
+    width: 450px;
+    height: 300px;
     padding: 1rem;
     border: 3px solid #777;
     overflow-y: scroll;
     z-index: 9;
+    margin: 65px auto;
+    box-shadow: 6px 5px 10px -6px rgba(0,0,0,0.75);
   }
   
   h1, h2 {
@@ -43,11 +43,4 @@ body {
     line-height: 1.5rem;
   }
   
-  nav ul {
   
-    display: flex;
-  }
-  nav li {
-  
-    padding: .5rem;
-  }

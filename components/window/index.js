@@ -1,5 +1,9 @@
 import { Fragment, useState, useRef } from "react";
 
+
+//components
+import Nav from "../../components/nav";
+
 //styles
 import "./styles.scss";
 const Window = ({ style }) => {
@@ -45,7 +49,7 @@ const Window = ({ style }) => {
   //   };
   return (
     <Fragment>
-      <div className="computer-screen" ref={element}>
+      <div className="window" ref={element}>
         <h1>Thomas Harbin: Front End Developer</h1>
 
         <h2>Favorites:</h2>
@@ -74,22 +78,9 @@ const Window = ({ style }) => {
           are good at identifying and learning new skills.
         </p>
 
-        <nav>
-          <ul>
-            <a href="resume.pdf" target="_blank">
-              <li>Resume</li>
-            </a>
-            <a href="https://github.com/thomasharbin" target="_blank">
-              <li>Github</li>
-            </a>
-            <a href="https://www.linkedin.com/in/thomasharbin/" target="_blank">
-              <li>LinkedIn</li>
-            </a>
-            <a href="mailto:thharbin@gmail.com" target="_blank">
-              <li>Contact</li>
-            </a>
-          </ul>
-        </nav>
+        <Nav />
+
+        
       </div>
     </Fragment>
   );
