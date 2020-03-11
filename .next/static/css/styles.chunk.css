@@ -163,7 +163,9 @@ img {
   width: 65px; }
 
 p.close-button {
-  color: #222; }
+  color: #222;
+  text-align: right;
+  display: inline-block; }
 
 p.icon-title {
   margin-top: 0;
@@ -178,52 +180,50 @@ p.icon-title {
   justify-content: flex-end;
   cursor: pointer; }
 
-.websites-window {
-  display: inline-block;
-  background: var(--white);
-  width: 450px;
-  height: 300px;
-  padding: 1rem;
-  border: 3px double #777;
-  overflow-y: scroll;
-  z-index: 9;
-  margin: -95px auto;
-  box-shadow: 6px 5px 10px -6px rgba(0, 0, 0, 0.75); }
-
-.margin-container {
-  margin-left: 10%;
-  margin-top: -325px; }
-
-.websites-window li {
-  color: var(--font-color); }
-
 img {
   width: 65px; }
 
-.preferences-container {
-  z-index: 10; }
+.wallpaper-content {
+  padding: 1rem; }
+  .wallpaper-content h3 {
+    font-weight: 600; }
+  .wallpaper-content button {
+    text-transform: uppercase;
+    display: inline-block;
+    margin: var(--space-lg) 6px;
+    transform: scale(0.97);
+    transition: transform .125s; }
+  .wallpaper-content button:hover {
+    transform: scale(1); }
 
-header {
-  border: 1px double #222;
-  width: 100%; }
-
-button {
-  background: var(--green);
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: var(--space-sm);
-  text-transform: uppercase;
-  display: block;
-  margin: var(--space-md) 0; }
-
-button:hover {
-  background: white; }
+.active-wallpaper {
+  outline: 3px solid lightblue; }
 
 .preferences-margin-container {
-  display: flex;
-  justify-content: center;
   margin-left: 6rem;
-  margin-top: -10rem; }
+  margin-top: -10rem;
+  padding: 0; }
+
+header {
+  border-top: 2px double #222;
+  border-bottom: 2px double #222;
+  padding: 6px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+  background: #e4e4e4; }
+  header p {
+    font-weight: 600;
+    color: black; }
+
+.preferences-container {
+  z-index: 10;
+  padding: 0; }
+
+.singleSite-link {
+  padding: 1rem; }
 
 .singleSite-list li:nth-child(even) {
   background: var(--lightest-gray); }
@@ -234,6 +234,26 @@ button:hover {
 
 .close-button {
   cursor: default; }
+
+.websites-window {
+  display: inline-block;
+  background: var(--white);
+  width: 450px;
+  height: 300px;
+  border: 3px double #777;
+  overflow-y: scroll;
+  z-index: 9;
+  margin: -95px auto;
+  box-shadow: 6px 5px 10px -6px rgba(0, 0, 0, 0.75); }
+  .websites-window ul {
+    padding-top: .5rem; }
+
+.margin-container {
+  margin-left: 10%;
+  margin-top: -325px; }
+
+.websites-window li {
+  color: var(--font-color); }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

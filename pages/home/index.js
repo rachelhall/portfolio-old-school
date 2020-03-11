@@ -18,12 +18,23 @@ const Home = () => {
   const [websitesOpen, toggleWebsitesOpen] = useState(false);
 
   const handleClickPreferences = () => {
-    togglePreferencesOpen(!preferencesOpen)
-  }
+    togglePreferencesOpen(!preferencesOpen);
+  };
 
   const handleClickWebsites = () => {
-    toggleWebsitesOpen(!websitesOpen)
+    toggleWebsitesOpen(!websitesOpen);
+  };
+
+  function setStars() {
+    setWallpaper("stars");
+    console.log("stars was clicked");
   }
+
+  function setGreen() {
+    setWallpaper("green");
+  }
+
+
   return (
     <motion.div
       ref={constraintsRef}
@@ -31,14 +42,32 @@ const Home = () => {
         wallpaper === "stars" ? "entire-display stars" : "entire-display"
       }
     >
-      <motion.div drag dragConstraints={{left: -300, top: -50, bottom: 500, right: 300}}>
+      <motion.div
+        drag
+        dragConstraints={{ left: -300, top: -50, bottom: 500, right: 300 }}
+      >
         <Window />
       </motion.div>
-      <motion.div drag dragConstraints={{left: -300, top: -50, bottom: 500, right: 300}}>
-        <PreferencesWindow preferencesOpen={preferencesOpen} handleClick={handleClickPreferences} />
+      <motion.div
+        drag
+        dragConstraints={{ left: -300, top: -50, bottom: 500, right: 300 }}
+      >
+        <PreferencesWindow
+          preferencesOpen={preferencesOpen}
+          handleClick={handleClickPreferences}
+          setWallpaper={setWallpaper}
+          wallpaper={wallpaper}
+        />
       </motion.div>
-      <motion.div drag dragConstraints={{left: -80, top: -50, bottom: 500, right: 300}}>
-        <WebsitesWindow websitesOpen={websitesOpen} handleClick={handleClickWebsites} />
+      <motion.div
+        drag
+        dragConstraints={{ left: -80, top: -50, bottom: 500, right: 300 }}
+      >
+        <WebsitesWindow
+          websitesOpen={websitesOpen}
+          handleClick={handleClickWebsites}
+          
+        />
       </motion.div>
 
       <motion.div className="icons-container" ref={iconConstraints}>

@@ -1,15 +1,26 @@
-button  {
-    background: var(--green);
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: var(--space-sm);
-    text-transform: uppercase;
-    display: block;
-    margin: var(--space-md) 0;
+
+
+.wallpaper-content {
+    padding: 1rem;
+    h3 {
+        font-weight: 600;
+    }
+    button  {
+        text-transform: uppercase;
+        display: inline-block;
+        margin: var(--space-lg) 6px;
+        transform: scale(.97);
+        transition: transform .125s;;
+    }
+    
+    button:hover {
+       transform: scale(1);
+    }
+
 }
 
-button:hover {
-    background: white;
+.active-wallpaper {
+    outline: 3px solid lightblue;
 }
 
 

@@ -152,20 +152,21 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 var PreferencesWindow = function PreferencesWindow(_ref) {
-  var setWallpaper = _ref.setWallpaper,
+  var wallpaper = _ref.wallpaper,
+      setWallpaper = _ref.setWallpaper,
       handleClick = _ref.handleClick,
       preferencesOpen = _ref.preferencesOpen;
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 16
     },
     __self: this
   }, preferencesOpen ? __jsx("div", {
     className: "preferences-margin-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 18
     },
     __self: this
   }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -181,34 +182,41 @@ var PreferencesWindow = function PreferencesWindow(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 19
     },
     __self: this
   }, __jsx("header", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 25
     },
     __self: this
-  }, "Control Panel"), __jsx("p", {
+  }, __jsx("p", {
     className: "close-button",
     onClick: handleClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 26
     },
     __self: this
-  }, "\u2716"), __jsx(_Wallpaper__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "\u2716"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }, "Control Panel")), __jsx(_Wallpaper__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    wallpaper: wallpaper,
     setWallpaper: setWallpaper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 32
     },
     __self: this
   }))) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 36
     },
     __self: this
   }));
@@ -239,7 +247,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 var Wallpaper = function Wallpaper(_ref) {
-  var setWallpaper = _ref.setWallpaper;
+  var wallpaper = _ref.wallpaper,
+      setWallpaper = _ref.setWallpaper;
 
   function setStars() {
     setWallpaper("stars");
@@ -248,35 +257,68 @@ var Wallpaper = function Wallpaper(_ref) {
 
   function setGreen() {
     setWallpaper("green");
+    console.log(wallpaper);
   }
 
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 18
     },
     __self: this
-  }, __jsx("h3", {
+  }, __jsx("div", {
+    className: "wallpaper-content",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 19
     },
     __self: this
-  }, "Select Wallpaper"), __jsx("button", {
-    onClick: setGreen,
+  }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20
     },
     __self: this
-  }, "Green"), __jsx("button", {
-    onClick: setStars,
+  }, "Select Wallpaper"), __jsx("div", {
+    className: "wallpaper-choices",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 21
     },
     __self: this
-  }, "Stars"));
+  }, __jsx("button", {
+    onClick: setGreen,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, __jsx("img", {
+    src: "/icon/green-background.png",
+    alt: "green background",
+    className: wallpaper == 'green' ? "active-wallpaper" : "",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  })), __jsx("button", {
+    onClick: setStars,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }, __jsx("img", {
+    src: "/wallpaper/stars.png",
+    alt: "stars background",
+    className: wallpaper == 'stars' ? "active-wallpaper" : "",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Wallpaper);
@@ -455,27 +497,61 @@ var Nav = function Nav() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.scss */ "./components/singleSite/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_1__);
 var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/singleSite/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// styles
+
+var sites = [{
+  name: "Mariela",
+  url: "https://cocky-roentgen-cbc28d.netlify.com/"
+}, {
+  name: "Thomas Harbin Piano",
+  url: "www.thomasharbinmusic.com"
+}, {
+  name: "MIDI Synthesizer",
+  url: "https://parcelsynth.netlify.com/"
+}, {
+  name: "List App",
+  url: "https://the-list.netlify.com/"
+}]; // console.log(sites.map(site => site.name));
 
 var SingleSite = function SingleSite() {
+  console.log(sites);
   return __jsx("div", {
     className: "single-site",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
+      lineNumber: 30
     },
     __self: this
-  }, __jsx("a", {
-    href: "https://cocky-roentgen-cbc28d.netlify.com/",
-    target: "_blank",
+  }, __jsx("ul", {
+    className: "singleSite-list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 31
     },
     __self: this
-  }, "Mariela"));
+  }, sites.map(function (site) {
+    return __jsx("li", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: this
+    }, __jsx("a", {
+      href: site.url,
+      target: "_blank",
+      className: "singleSite-link",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: this
+    }, site.name));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SingleSite);
@@ -539,104 +615,43 @@ var WebsitesWindow = function WebsitesWindow(_ref) {
       lineNumber: 14
     },
     __self: this
-  }, __jsx("p", {
-    className: "close-button",
-    onClick: handleClick,
+  }, __jsx("header", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20
     },
     __self: this
-  }, "\u2716"), __jsx("div", {
-    className: "singleSite-container",
+  }, __jsx("p", {
+    className: "close-button",
+    onClick: handleClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 21
     },
     __self: this
-  }, __jsx("ul", {
-    className: "singleSite-list",
+  }, "\u2716"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24
     },
     __self: this
-  }, __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, __jsx(_singleSite__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "Websites")), __jsx("div", {
+    className: "singleSite-container",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 26
     },
     __self: this
-  })), __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: this
   }, __jsx(_singleSite__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 27
     },
     __self: this
-  })), __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: this
-  }, __jsx(_singleSite__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  })))) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
-    },
-    __self: this
-  })), __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: this
-  }, __jsx(_singleSite__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: this
-  })), __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: this
-  }, __jsx(_singleSite__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: this
-  })), __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: this
-  }, __jsx(_singleSite__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: this
-  })))))) : __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48
     },
     __self: this
   }));
@@ -9412,12 +9427,21 @@ var Home = function Home() {
     toggleWebsitesOpen(!websitesOpen);
   };
 
+  function setStars() {
+    setWallpaper("stars");
+    console.log("stars was clicked");
+  }
+
+  function setGreen() {
+    setWallpaper("green");
+  }
+
   return __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
     ref: constraintsRef,
     className: wallpaper === "stars" ? "entire-display stars" : "entire-display",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 39
     },
     __self: this
   }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
@@ -9430,13 +9454,13 @@ var Home = function Home() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 45
     },
     __self: this
   }, __jsx(_components_window__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 49
     },
     __self: this
   })), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
@@ -9449,15 +9473,17 @@ var Home = function Home() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 51
     },
     __self: this
   }, __jsx(_components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_6__["default"], {
     preferencesOpen: preferencesOpen,
     handleClick: handleClickPreferences,
+    setWallpaper: setWallpaper,
+    wallpaper: wallpaper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 55
     },
     __self: this
   })), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
@@ -9470,7 +9496,7 @@ var Home = function Home() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 62
     },
     __self: this
   }, __jsx(_components_websitesWindow__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -9478,7 +9504,7 @@ var Home = function Home() {
     handleClick: handleClickWebsites,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 66
     },
     __self: this
   })), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
@@ -9486,7 +9512,7 @@ var Home = function Home() {
     ref: iconConstraints,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 73
     },
     __self: this
   }, __jsx(_components_Icons__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -9496,7 +9522,7 @@ var Home = function Home() {
     websitesOpen: websitesOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 74
     },
     __self: this
   })));
@@ -9524,7 +9550,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fthomasharbin%2FDocuments%2FGitHub%2Fportfolio-old-school%2Fpages%2Findex.js ***!
   \*******************************************************************************************************************************************************/
@@ -9547,5 +9573,5 @@ module.exports = dll_0fb095e325d7ebf261c3;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js","styles"]]]);
+},[[2,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

@@ -6,7 +6,12 @@ import Wallpaper from "../Wallpaper";
 
 // styles
 import "./styles.scss";
-const PreferencesWindow = ({ setWallpaper, handleClick, preferencesOpen }) => {
+const PreferencesWindow = ({
+  wallpaper,
+  setWallpaper,
+  handleClick,
+  preferencesOpen
+}) => {
   return (
     <Fragment>
       {preferencesOpen ? (
@@ -17,11 +22,14 @@ const PreferencesWindow = ({ setWallpaper, handleClick, preferencesOpen }) => {
             animate={{ scale: 1 }}
             transition={{ duration: 0.25 }}
           >
-            <header>Control Panel</header>
-            <p className="close-button" onClick={handleClick}>
-              &#10006;
-            </p>
-            <Wallpaper setWallpaper={setWallpaper} />
+            <header>
+              <p className="close-button" onClick={handleClick}>
+                &#10006;
+              </p>
+              <p>Control Panel</p>
+            </header>
+
+            <Wallpaper wallpaper={wallpaper} setWallpaper={setWallpaper} />
           </motion.div>
         </div>
       ) : (

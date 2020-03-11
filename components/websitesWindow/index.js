@@ -17,30 +17,14 @@ const WebsitesWindow = ({ websitesOpen, handleClick }) => {
             transition={{ duration: 0.25 }}
             className="websites-window"
           >
-            <p className="close-button" onClick={handleClick}>
-              &#10006;
-            </p>
+            <header>
+              <p className="close-button" onClick={handleClick}>
+                &#10006;
+              </p>
+              <p>Websites</p>
+            </header>
             <div className="singleSite-container">
-              <ul className="singleSite-list">
-                <li>
-                  <SingleSite />
-                </li>
-                <li>
-                  <SingleSite />
-                </li>
-                <li>
-                  <SingleSite />
-                </li>
-                <li>
-                  <SingleSite />
-                </li>
-                <li>
-                  <SingleSite />
-                </li>
-                <li>
-                  <SingleSite />
-                </li>
-              </ul>
+              <SingleSite />
             </div>
           </motion.div>
         </div>
