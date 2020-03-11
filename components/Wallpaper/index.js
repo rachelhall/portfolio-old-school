@@ -1,5 +1,8 @@
 import { Fragment } from "react";
 
+// styles
+import "./styles.scss";
+
 const Wallpaper = ({ setWallpaper }) => {
   function setStars() {
     setWallpaper("stars");
@@ -7,14 +10,15 @@ const Wallpaper = ({ setWallpaper }) => {
   }
 
   function setGreen() {
-      setWallpaper("green")
+    setWallpaper("green");
   }
 
   return (
     <Fragment>
+      
       <h3>Select Wallpaper</h3>
       <button onClick={setGreen}>Green</button>
-      <div onClick={setStars}>Stars</div>
+      <button onClick={setStars}>Stars</button>
     </Fragment>
   );
 };

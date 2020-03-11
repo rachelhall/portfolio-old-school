@@ -1,0 +1,15 @@
+button  {
+    background: var(--green);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: var(--space-sm);
+    text-transform: uppercase;
+    display: block;
+    margin: var(--space-md) 0;
+}
+
+button:hover {
+    background: white;
+}
+
+

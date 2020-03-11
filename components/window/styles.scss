@@ -9,14 +9,12 @@ body {
   }
   
  
- 
-  
   .window {
     background: #222;
     width: 450px;
     height: 300px;
     padding: 1rem;
-    border: 3px solid #777;
+    border: 3px double #777;
     overflow-y: scroll;
     z-index: 9;
     margin: auto;
@@ -37,9 +35,6 @@ body {
     list-style: none;
   }
   
-  p {
-    margin: 1.25rem 0;
-  }
   li {
     line-height: 1.5rem;
   }

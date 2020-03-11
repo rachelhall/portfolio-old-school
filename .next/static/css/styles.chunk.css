@@ -51,8 +51,9 @@ img {
 :root {
   --background: #000001;
   --foreground: #191a19;
-  --font-color: ##222;
-  --light-gray: #979797;
+  --font-color: #222;
+  --lightest-gray:#f2f2f2;
+  --light-gray: #c7c6c6;
   --active-state: #3c3c3c;
   --medium-gray: #191a1a;
   --green: #7cf277;
@@ -102,7 +103,13 @@ div {
 
 .entire-display {
   height: 100vh;
-  padding-top: 65px; }
+  padding-top: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.icons-container {
+  display: flex; }
 
 nav ul {
   display: flex; }
@@ -131,7 +138,7 @@ a {
   width: 450px;
   height: 300px;
   padding: 1rem;
-  border: 3px solid #777;
+  border: 3px double #777;
   overflow-y: scroll;
   z-index: 9;
   margin: auto;
@@ -149,9 +156,6 @@ p, h1, h2, li {
   letter-spacing: .35px;
   list-style: none; }
 
-p {
-  margin: 1.25rem 0; }
-
 li {
   line-height: 1.5rem; }
 
@@ -168,7 +172,11 @@ p.icon-title {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
 
 .single-icon {
-  margin: 2rem; }
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer; }
 
 .websites-window {
   display: inline-block;
@@ -192,12 +200,40 @@ p.icon-title {
 img {
   width: 65px; }
 
-.single-icon {
-  display: inline-block;
-  cursor: pointer; }
-
 .preferences-container {
   z-index: 10; }
+
+header {
+  border: 1px double #222;
+  width: 100%; }
+
+button {
+  background: var(--green);
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: var(--space-sm);
+  text-transform: uppercase;
+  display: block;
+  margin: var(--space-md) 0; }
+
+button:hover {
+  background: white; }
+
+.preferences-margin-container {
+  display: flex;
+  justify-content: center;
+  margin-left: 6rem;
+  margin-top: -10rem; }
+
+.singleSite-list li:nth-child(even) {
+  background: var(--lightest-gray); }
+
+.singleSite-list li:hover {
+  background: var(--light-gray);
+  transition: background 0.2s; }
+
+.close-button {
+  cursor: default; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

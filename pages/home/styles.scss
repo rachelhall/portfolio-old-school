@@ -13,5 +13,12 @@ div {
 .entire-display {
     height: 100vh;
     padding-top: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
    
+}
+
+.icons-container {
+    display: flex;
 }

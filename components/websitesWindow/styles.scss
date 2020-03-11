@@ -1,0 +1,12 @@
+.singleSite-list li:nth-child(even) {
+    background: var(--lightest-gray);
+}
+
+.singleSite-list li:hover {
+    background: var(--light-gray);
+    transition: background 0.2s;
+}
+
+.close-button {
+    cursor: default;
+}
