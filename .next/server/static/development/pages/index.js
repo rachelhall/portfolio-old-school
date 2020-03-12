@@ -1109,14 +1109,11 @@ const Home = () => {
     toggleWebsitesOpen(!websitesOpen);
   };
 
-  let removeDrag;
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    removeDrag = Object(_utils_useMediaQuery__WEBPACK_IMPORTED_MODULE_4__["useMediaQuery"])("(max-width: 600px)");
-  });
+  const removeDrag = Object(_utils_useMediaQuery__WEBPACK_IMPORTED_MODULE_4__["useMediaQuery"])("(max-width: 600px)");
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 35
     },
     __self: undefined
   }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -1124,19 +1121,19 @@ const Home = () => {
     className: wallpaper === "stars" ? "entire-display stars" : wallpaper === "blue" ? "entire-display blue" : "entire-display",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 36
     },
     __self: undefined
   }, __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 46
     },
     __self: undefined
   }), removeDrag ? __jsx(_components_window__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 49
     },
     __self: undefined
   }) : __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -1150,13 +1147,13 @@ const Home = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx(_components_window__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 61
     },
     __self: undefined
   })), __jsx(_components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -1166,7 +1163,7 @@ const Home = () => {
     wallpaper: wallpaper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 65
     },
     __self: undefined
   }), __jsx(_components_websitesWindow__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1174,7 +1171,7 @@ const Home = () => {
     handleClick: handleClickWebsites,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 72
     },
     __self: undefined
   }), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -1182,7 +1179,7 @@ const Home = () => {
     ref: iconConstraints,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 77
     },
     __self: undefined
   }, __jsx(_components_Icons__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -1192,7 +1189,7 @@ const Home = () => {
     websitesOpen: websitesOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 78
     },
     __self: undefined
   }))));

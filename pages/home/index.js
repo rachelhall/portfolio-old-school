@@ -29,11 +29,7 @@ const Home = () => {
     toggleWebsitesOpen(!websitesOpen);
   };
 
-  let removeDrag;
-
-  useEffect(() => {
-    removeDrag = useMediaQuery("(max-width: 600px)");
-  });
+  const removeDrag = useMediaQuery("(max-width: 600px)");
 
   return (
     <Fragment>
