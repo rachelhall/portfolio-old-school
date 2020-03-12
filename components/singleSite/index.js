@@ -3,12 +3,20 @@ import "./styles.scss"
 
 const sites = [
   {
+    name: "Bible Reading App",
+    url: "https://bible-app.now.sh/"
+  },
+  {
+    name: "Texas Leaguer Brewing",
+    url: "https://txleaguer.com/"
+  }
+  {
     name: "Mariela",
     url: "https://cocky-roentgen-cbc28d.netlify.com/"
   },
   {
     name: "Thomas Harbin Piano",
-    url: "www.thomasharbinmusic.com"
+    url: "https://jolly-leavitt-2d8149.netlify.com/"
   },
   {
     name: "MIDI Synthesizer",
@@ -20,8 +28,6 @@ const sites = [
   }
 
 ];
-
-// console.log(sites.map(site => site.name));
 
 const SingleSite = () => {
 

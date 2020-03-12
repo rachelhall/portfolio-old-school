@@ -16,10 +16,14 @@ body {
     padding: 1rem;
     border: 3px double #777;
     overflow-y: scroll;
-    z-index: 9;
+    z-index: 3;
     margin: auto;
     box-shadow: 6px 5px 10px -6px rgba(0,0,0,0.75);
     cursor: default;
+    @media only screen and (max-width: 600px) {
+      width: 320px;
+    }
+
   }
   
   h1, h2 {
@@ -37,6 +41,10 @@ body {
   
   li {
     line-height: 1.5rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    
   }
   
   

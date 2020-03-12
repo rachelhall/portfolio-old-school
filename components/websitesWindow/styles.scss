@@ -18,12 +18,15 @@
     height: 300px;
     border: 3px double #777;
     overflow-y: scroll;
-    z-index: 9;
+    z-index: 4;
     margin: -95px auto;
     box-shadow: 6px 5px 10px -6px rgba(0,0,0,0.75);
     ul {
         padding-top: .5rem;
     }
+    @media only screen and (max-width: 600px) {
+        width: 320px;
+      }
     
   }
 
