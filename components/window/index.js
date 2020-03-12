@@ -12,16 +12,15 @@ const Window = ({ style }) => {
     <Fragment>
       <div className="window" ref={element}>
         <h1>Thomas Harbin: Front End Developer</h1>
-
         <h2>Favorites:</h2>
-        <br/>
+        <br />
         <ul>
           <li>- React</li>
           <li>- Next JS</li>
           <li>- Vanilla JS</li>
           <li>- Cosmic JS</li>
         </ul>
-        <br/>
+        <br />
 
         <p>
           Thomas went from music teacher to tech. After years teaching
@@ -29,7 +28,7 @@ const Window = ({ style }) => {
           interest in web development and discovered the same type of creativity
           he loved about music abounded in the dev space.
         </p>
-        <br/>
+        <br />
         <p data-type data-type-min="1" data-type-max="9">
           Outside of work, Thomas enjoys playing and recording music with
           friends and skateboarding/rollerblading.
@@ -41,9 +40,7 @@ const Window = ({ style }) => {
           working long, focused hours and self-evaluation. Classical pianists
           are good at identifying and learning new skills.
         </p>
-        <br/>
-
-        <Nav />
+        <br />
       </div>
     </Fragment>
   );
