@@ -26,6 +26,7 @@
     }
     @media only screen and (max-width: 600px) {
         width: 320px;
+        
       }
     
   }
@@ -33,6 +34,10 @@
   .margin-container {
       margin-left: 10%;
       margin-top: -325px;
+      @media only screen and (max-width: 600px) {
+        margin-left: 3.2rem;
+        margin-top: -10rem;
+      }
   }
 
  .websites-window li {

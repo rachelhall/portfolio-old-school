@@ -263,22 +263,31 @@ const PreferencesWindow = ({
   wallpaper,
   setWallpaper,
   handleClick,
-  preferencesOpen
+  preferencesOpen // startDrag
+
 }) => {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     },
     __self: undefined
   }, preferencesOpen ? __jsx("div", {
     className: "preferences-margin-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    drag: true,
+    dragMomentum: false,
+    dragConstraints: {
+      left: -300,
+      top: -50,
+      bottom: 500,
+      right: 300
+    },
     className: "preferences-container websites-window",
     initial: {
       scale: 0
@@ -291,13 +300,13 @@ const PreferencesWindow = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     },
     __self: undefined
   }, __jsx("header", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 29
     },
     __self: undefined
   }, __jsx("p", {
@@ -305,13 +314,13 @@ const PreferencesWindow = ({
     onClick: handleClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 30
     },
     __self: undefined
   }, "\u2716"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 33
     },
     __self: undefined
   }, "Control Panel")), __jsx(_Wallpaper__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -319,13 +328,13 @@ const PreferencesWindow = ({
     setWallpaper: setWallpaper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 36
     },
     __self: undefined
   }))) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 40
     },
     __self: undefined
   }));
@@ -380,37 +389,42 @@ const Wallpaper = ({
     console.log(wallpaper);
   }
 
+  function setBlue() {
+    setWallpaper("blue");
+    console.log(wallpaper);
+  }
+
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 22
     },
     __self: undefined
   }, __jsx("div", {
     className: "wallpaper-content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 23
     },
     __self: undefined
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 24
     },
     __self: undefined
   }, "Select Wallpaper"), __jsx("div", {
     className: "wallpaper-choices",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 25
     },
     __self: undefined
   }, __jsx("button", {
     onClick: setGreen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 26
     },
     __self: undefined
   }, __jsx("img", {
@@ -419,14 +433,14 @@ const Wallpaper = ({
     className: wallpaper == 'green' ? `active-wallpaper` : ``,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 27
     },
     __self: undefined
   })), __jsx("button", {
     onClick: setStars,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 31
     },
     __self: undefined
   }, __jsx("img", {
@@ -435,7 +449,23 @@ const Wallpaper = ({
     className: wallpaper == 'stars' ? `active-wallpaper` : ``,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 32
+    },
+    __self: undefined
+  })), __jsx("button", {
+    onClick: setBlue,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }, __jsx("img", {
+    src: "/wallpaper/blue.png",
+    alt: "stars background",
+    className: wallpaper == 'stars' ? `active-wallpaper` : ``,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
     },
     __self: undefined
   })))));
@@ -676,6 +706,9 @@ const sites = [{
   name: "Bible Reading App",
   url: "https://bible-app.now.sh/"
 }, {
+  name: "Texas Leaguer Brewing",
+  url: "https://txleaguer.com/  "
+}, {
   name: "Mariela",
   url: "https://cocky-roentgen-cbc28d.netlify.com/"
 }, {
@@ -695,21 +728,21 @@ const SingleSite = () => {
     className: "single-site",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 36
     },
     __self: undefined
   }, __jsx("ul", {
     className: "singleSite-list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 37
     },
     __self: undefined
   }, sites.map(site => {
     return __jsx("li", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 40
       },
       __self: undefined
     }, __jsx("a", {
@@ -718,7 +751,7 @@ const SingleSite = () => {
       className: "singleSite-link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 41
       },
       __self: undefined
     }, site.name));
@@ -784,6 +817,14 @@ const WebsitesWindow = ({
     },
     __self: undefined
   }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    drag: true,
+    dragMomentum: false,
+    dragConstraints: {
+      left: -80,
+      top: -50,
+      bottom: 500,
+      right: 300
+    },
     initial: {
       scale: 0
     },
@@ -802,7 +843,7 @@ const WebsitesWindow = ({
   }, __jsx("header", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 23
     },
     __self: undefined
   }, __jsx("p", {
@@ -810,32 +851,32 @@ const WebsitesWindow = ({
     onClick: handleClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 24
     },
     __self: undefined
   }, "\u2716"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 27
     },
     __self: undefined
   }, "Websites")), __jsx("div", {
     className: "singleSite-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 29
     },
     __self: undefined
   }, __jsx(_singleSite__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 30
     },
     __self: undefined
   })))) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 35
     },
     __self: undefined
   }));
@@ -1016,22 +1057,25 @@ const Window = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_draggable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-draggable */ "react-draggable");
-/* harmony import */ var react_draggable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_draggable__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! framer-motion */ "framer-motion");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _home_styles_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../home/styles.scss */ "./pages/home/styles.scss");
-/* harmony import */ var _home_styles_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_home_styles_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_window__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/window */ "./components/window/index.js");
-/* harmony import */ var _components_Icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Icons */ "./components/Icons/index.js");
-/* harmony import */ var _components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/PreferencesWindow */ "./components/PreferencesWindow/index.js");
-/* harmony import */ var _components_websitesWindow__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/websitesWindow */ "./components/websitesWindow/index.js");
-/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/nav */ "./components/nav/index.js");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "framer-motion");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _home_styles_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../home/styles.scss */ "./pages/home/styles.scss");
+/* harmony import */ var _home_styles_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_home_styles_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/dynamic */ "next/dynamic");
+/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_dynamic__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utils_useMediaQuery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/useMediaQuery */ "./utils/useMediaQuery.js");
+/* harmony import */ var _components_window__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/window */ "./components/window/index.js");
+/* harmony import */ var _components_Icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Icons */ "./components/Icons/index.js");
+/* harmony import */ var _components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/PreferencesWindow */ "./components/PreferencesWindow/index.js");
+/* harmony import */ var _components_websitesWindow__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/websitesWindow */ "./components/websitesWindow/index.js");
+/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/nav */ "./components/nav/index.js");
 var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/pages/home/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+
+ // utils
 
  //componenets
 
@@ -1065,114 +1109,90 @@ const Home = () => {
     toggleWebsitesOpen(!websitesOpen);
   };
 
-  function setStars() {
-    setWallpaper("stars");
-    console.log("stars was clicked");
-  }
-
-  function setGreen() {
-    setWallpaper("green");
-  }
-
+  let removeDrag;
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    removeDrag = Object(_utils_useMediaQuery__WEBPACK_IMPORTED_MODULE_4__["useMediaQuery"])("(max-width: 600px)");
+  });
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39
     },
     __self: undefined
-  }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
+  }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: constraintsRef,
-    className: wallpaper === "stars" ? "entire-display stars" : "entire-display",
+    className: wallpaper === "stars" ? "entire-display stars" : wallpaper === "blue" ? "entire-display blue" : "entire-display",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 40
     },
     __self: undefined
-  }, __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 50
     },
     __self: undefined
-  }), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
-    drag: true,
-    dragConstraints: {
-      left: -300,
-      top: -50,
-      bottom: 500,
-      right: 300
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: undefined
-  }, __jsx(_components_window__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: undefined
-  })), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
-    drag: true,
-    dragConstraints: {
-      left: -300,
-      top: -50,
-      bottom: 500,
-      right: 300
-    },
+  }), removeDrag ? __jsx(_components_window__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 53
     },
     __self: undefined
-  }, __jsx(_components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }) : __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    drag: true,
+    dragMomentum: false,
+    dragConstraints: {
+      left: -300,
+      top: -50,
+      bottom: 500,
+      right: 300
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }, __jsx(_components_window__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: undefined
+  })), __jsx(_components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_7__["default"], {
     preferencesOpen: preferencesOpen,
     handleClick: handleClickPreferences,
     setWallpaper: setWallpaper,
     wallpaper: wallpaper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 69
     },
     __self: undefined
-  })), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
-    drag: true,
-    dragConstraints: {
-      left: -80,
-      top: -50,
-      bottom: 500,
-      right: 300
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    },
-    __self: undefined
-  }, __jsx(_components_websitesWindow__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), __jsx(_components_websitesWindow__WEBPACK_IMPORTED_MODULE_8__["default"], {
     websitesOpen: websitesOpen,
     handleClick: handleClickWebsites,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 76
     },
     __self: undefined
-  })), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div, {
+  }), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     className: "icons-container",
     ref: iconConstraints,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 81
     },
     __self: undefined
-  }, __jsx(_components_Icons__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(_components_Icons__WEBPACK_IMPORTED_MODULE_6__["default"], {
     togglePreferencesOpen: togglePreferencesOpen,
     preferencesOpen: preferencesOpen,
     toggleWebsitesOpen: toggleWebsitesOpen,
     websitesOpen: websitesOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 82
     },
     __self: undefined
   }))));
@@ -1211,6 +1231,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./utils/useMediaQuery.js":
+/*!********************************!*\
+  !*** ./utils/useMediaQuery.js ***!
+  \********************************/
+/*! exports provided: useMediaQuery */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useMediaQuery", function() { return useMediaQuery; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const useMediaQuery = ({
+  query
+}) => {
+  const mediaMatch = window.matchMedia(query);
+  const {
+    0: matches,
+    1: setMatches
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(mediaMatch.matches);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    const handler = e => setMatches(e.matches);
+
+    mediaMatch.addListener(handler);
+    return () => mediaMatch.removeListener(handler);
+  });
+  return matches;
+};
+
+/***/ }),
+
 /***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
@@ -1234,6 +1286,17 @@ module.exports = require("framer-motion");
 
 /***/ }),
 
+/***/ "next/dynamic":
+/*!*******************************!*\
+  !*** external "next/dynamic" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/dynamic");
+
+/***/ }),
+
 /***/ "react":
 /*!************************!*\
   !*** external "react" ***!
@@ -1242,17 +1305,6 @@ module.exports = require("framer-motion");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-draggable":
-/*!**********************************!*\
-  !*** external "react-draggable" ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-draggable");
 
 /***/ })
 

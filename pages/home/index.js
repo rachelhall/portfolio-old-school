@@ -1,7 +1,10 @@
-import Draggable, { DraggableCore } from "react-draggable";
 import { motion } from "framer-motion";
 import "../home/styles.scss";
-import { useState, useRef, Fragment } from "react";
+import { useState, useRef, Fragment, useEffect } from "react";
+import dynamic from "next/dynamic";
+
+// utils
+import { useMediaQuery } from "../../utils/useMediaQuery";
 
 //componenets
 import Window from "../../components/window";
@@ -26,50 +29,54 @@ const Home = () => {
     toggleWebsitesOpen(!websitesOpen);
   };
 
-  function setStars() {
-    setWallpaper("stars");
-    console.log("stars was clicked");
-  }
+  let removeDrag;
 
-  function setGreen() {
-    setWallpaper("green");
-  }
+  useEffect(() => {
+    removeDrag = useMediaQuery("(max-width: 600px)");
+  });
 
   return (
     <Fragment>
       <motion.div
         ref={constraintsRef}
         className={
-          wallpaper === "stars" ? "entire-display stars" : "entire-display"
+          wallpaper === "stars"
+            ? "entire-display stars"
+            : wallpaper === "blue"
+            ? "entire-display blue"
+            : "entire-display"
         }
       >
         <Nav />
-        <motion.div
-          drag
-          dragConstraints={{ left: -300, top: -50, bottom: 500, right: 300 }}
-        >
+
+        {removeDrag ? (
           <Window />
-        </motion.div>
-        <motion.div
-          drag
-          dragConstraints={{ left: -300, top: -50, bottom: 500, right: 300 }}
-        >
-          <PreferencesWindow
-            preferencesOpen={preferencesOpen}
-            handleClick={handleClickPreferences}
-            setWallpaper={setWallpaper}
-            wallpaper={wallpaper}
-          />
-        </motion.div>
-        <motion.div
-          drag
-          dragConstraints={{ left: -80, top: -50, bottom: 500, right: 300 }}
-        >
-          <WebsitesWindow
-            websitesOpen={websitesOpen}
-            handleClick={handleClickWebsites}
-          />
-        </motion.div>
+        ) : (
+          <motion.div
+            drag
+            dragMomentum={false}
+            dragConstraints={{
+              left: -300,
+              top: -50,
+              bottom: 500,
+              right: 300
+            }}
+          >
+            <Window />
+          </motion.div>
+        )}
+
+        <PreferencesWindow
+          preferencesOpen={preferencesOpen}
+          handleClick={handleClickPreferences}
+          setWallpaper={setWallpaper}
+          wallpaper={wallpaper}
+        />
+
+        <WebsitesWindow
+          websitesOpen={websitesOpen}
+          handleClick={handleClickWebsites}
+        />
 
         <motion.div className="icons-container" ref={iconConstraints}>
           <Icons
