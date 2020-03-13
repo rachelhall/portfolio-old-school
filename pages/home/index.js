@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 import "../home/styles.scss";
 import { useState, useRef, Fragment, useEffect } from "react";
-import dynamic from "next/dynamic";
 
 // utils
 import { useMediaQuery } from "../../utils/useMediaQuery";
 
 //componenets
-import Window from "../../components/window";
+
 import Icons from "../../components/Icons";
 import PreferencesWindow from "../../components/PreferencesWindow";
 import WebsitesWindow from "../../components/websitesWindow";
 import Nav from "../../components/nav";
+import InfoWindow from "../../components/infoWindow";
 
 const Home = () => {
   const constraintsRef = useRef(null);
@@ -24,7 +24,7 @@ const Home = () => {
     setCanDrag(mediaMatch.matches);
   }, []);
 
-  const [wallpaper, setWallpaper] = useState("green");
+  const [wallpaper, setWallpaper] = useState("blue");
   const [preferencesOpen, togglePreferencesOpen] = useState(false);
   const [websitesOpen, toggleWebsitesOpen] = useState(false);
 
@@ -43,8 +43,10 @@ const Home = () => {
         className={
           wallpaper === "stars"
             ? "entire-display stars"
-            : wallpaper === "blue"
-            ? "entire-display blue"
+            : wallpaper === "green"
+            ? "entire-display green"
+            : wallpaper === "gray"
+            ? "entire-display gray"
             : "entire-display"
         }
       >
@@ -61,10 +63,10 @@ const Home = () => {
               right: 300
             }}
           >
-            <Window />
+            <InfoWindow />
           </motion.div>
         ) : (
-          <Window />
+          <InfoWindow />
         )}
 
         <PreferencesWindow

@@ -1,0 +1,1 @@
+{"ast":null,"code":"const window = () => {\n  return;\n};","map":{"version":3,"sources":["/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/window/index.js"],"names":["window"],"mappings":"AAAA,MAAMA,MAAM,GAAG,MAAM;AACjB;AACH,CAFD","sourcesContent":["const window = () => {\n    return\n}"]},"metadata":{},"sourceType":"script"}

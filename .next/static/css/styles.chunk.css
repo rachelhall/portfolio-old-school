@@ -93,13 +93,24 @@ body {
     font-weight: 900; }
 
 body {
-  background: #007576; }
+  background: url("/wallpaper/blue.png"); }
+  body p.icon-title {
+    color: white; }
 
 .stars {
   background: url("/wallpaper/stars.png"); }
+  .stars p.icon-title {
+    color: white; }
 
-.blue {
-  background: url("/wallpaper/blue.png"); }
+.green {
+  background: url("/wallpaper/green.png"); }
+  .green p.icon-title {
+    color: black; }
+
+.gray {
+  background: url("/wallpaper/gray.png"); }
+  .gray p.icon-title {
+    color: white; }
 
 div {
   font-family: 'Courier New', Courier, monospace; }
@@ -113,75 +124,6 @@ div {
 .icons-container {
   display: flex; }
 
-nav {
-  border-bottom: 2px double #222;
-  padding: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  text-align: center;
-  background: #e4e4e4; }
-  nav p {
-    font-weight: 600;
-    color: black; }
-  nav ul {
-    display: flex;
-    align-items: center; }
-  nav li {
-    padding-left: .5rem;
-    padding-right: .5rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #2e2e2e;
-    text-transform: capitalize;
-    letter-spacing: .35px;
-    list-style: none;
-    transform: scale(0.96);
-    transition: all .2s; }
-    nav li a {
-      font-weight: 700; }
-  nav li a:hover {
-    color: #000;
-    transform: scale(1); }
-  nav img {
-    width: 2rem; }
-
-body {
-  margin: 0;
-  padding: 0; }
-
-a {
-  text-decoration: none; }
-
-.window {
-  background: #222;
-  width: 450px;
-  height: 300px;
-  padding: 1rem;
-  border: 3px double #777;
-  overflow-y: scroll;
-  z-index: 3;
-  margin: auto;
-  box-shadow: 6px 5px 10px -6px rgba(0, 0, 0, 0.75);
-  cursor: default; }
-  @media only screen and (max-width: 600px) {
-    .window {
-      width: 320px; } }
-
-h1, h2 {
-  font-weight: 200;
-  font-size: 1rem; }
-
-p, h1, h2, li {
-  font-family: Courier;
-  color: #33ff00;
-  text-transform: uppercase;
-  letter-spacing: .35px;
-  list-style: none; }
-
-li {
-  line-height: 1.5rem; }
-
 img {
   width: 65px; }
 
@@ -191,9 +133,11 @@ p.close-button {
   display: inline-block; }
 
 p.icon-title {
-  margin-top: 0;
+  margin-top: var(--space-sm);
   color: #222;
   text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
 
 .single-icon {
@@ -292,6 +236,75 @@ header {
 
 .websites-window li {
   color: var(--font-color); }
+
+nav {
+  border-bottom: 2px double #222;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+  background: #e4e4e4; }
+  nav p {
+    font-weight: 600;
+    color: black; }
+  nav ul {
+    display: flex;
+    align-items: center; }
+  nav li {
+    padding-left: .5rem;
+    padding-right: .5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #2e2e2e;
+    text-transform: capitalize;
+    letter-spacing: .35px;
+    list-style: none;
+    transform: scale(0.96);
+    transition: all .2s; }
+    nav li a {
+      font-weight: 700; }
+  nav li a:hover {
+    color: #000;
+    transform: scale(1); }
+  nav img {
+    width: 2rem; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none; }
+
+.window {
+  background: #222;
+  width: 450px;
+  height: 300px;
+  padding: 1rem;
+  border: 3px double #777;
+  overflow-y: scroll;
+  z-index: 3;
+  margin: auto;
+  box-shadow: 6px 5px 10px -6px rgba(0, 0, 0, 0.75);
+  cursor: default; }
+  @media only screen and (max-width: 600px) {
+    .window {
+      width: 320px; } }
+
+h1, h2 {
+  font-weight: 200;
+  font-size: 1rem; }
+
+p, h1, h2, li {
+  font-family: Courier;
+  color: #33ff00;
+  text-transform: uppercase;
+  letter-spacing: .35px;
+  list-style: none; }
+
+li {
+  line-height: 1.5rem; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

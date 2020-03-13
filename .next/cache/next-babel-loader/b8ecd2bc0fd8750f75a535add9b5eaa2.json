@@ -1,0 +1,1 @@
+{"ast":null,"code":"var window = function window() {};","map":{"version":3,"sources":["/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/window/index.js"],"names":["window"],"mappings":"AAAA,IAAMA,MAAM,GAAG,SAATA,MAAS,GAAM,CAEpB,CAFD","sourcesContent":["const window = () => {\n    \n}"]},"metadata":{},"sourceType":"script"}

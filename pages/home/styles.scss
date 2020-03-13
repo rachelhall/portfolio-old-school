@@ -1,14 +1,29 @@
 body {
-    background: #007576; 
+    background: url('/wallpaper/blue.png'); 
+    p.icon-title {
+        color: white;
+    }
 }
 
 .stars {
     background: url('/wallpaper/stars.png');
+    p.icon-title {
+        color: white;
+    }
 }
 
-.blue {
-    background: url('/wallpaper/blue.png');
-    
+.green {
+    background: url('/wallpaper/green.png'); 
+    p.icon-title {
+        color: black;
+    }
+}
+
+.gray {
+    background: url('/wallpaper/gray.png');
+    p.icon-title {
+        color: white;
+    }
 }
 
 div {
