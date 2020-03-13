@@ -18,7 +18,7 @@
     height: 300px;
     border: 3px double #777;
     overflow-y: scroll;
-    z-index: 4;
+    z-index: 10;
     margin: -95px auto;
     box-shadow: 6px 5px 10px -6px rgba(0,0,0,0.75);
     ul {
@@ -31,9 +31,10 @@
     
   }
 
-  .margin-container {
+  .websites-margin-container {
       margin-left: 10%;
       margin-top: -325px;
+      z-index: 10;
       @media only screen and (max-width: 600px) {
         margin-left: 3.2rem;
         margin-top: -10rem;

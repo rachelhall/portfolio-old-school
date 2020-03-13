@@ -131,7 +131,9 @@ const Icons = ({
     __self: undefined
   }, __jsx(_WebsitesIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {
     websitesOpen: websitesOpen,
+    preferencesOpen: preferencesOpen,
     toggleWebsitesOpen: toggleWebsitesOpen,
+    togglePreferencesOpen: togglePreferencesOpen,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
@@ -139,10 +141,12 @@ const Icons = ({
     __self: undefined
   }), __jsx(_PreferencesIcon__WEBPACK_IMPORTED_MODULE_3__["default"], {
     togglePreferencesOpen: togglePreferencesOpen,
+    toggleWebsitesOpen: toggleWebsitesOpen,
     preferencesOpen: preferencesOpen,
+    websitesOpen: websitesOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 21
     },
     __self: undefined
   }));
@@ -178,18 +182,25 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const PreferencesIcon = ({
   setWallpaper,
   togglePreferencesOpen,
-  preferencesOpen
+  preferencesOpen,
+  websitesOpen,
+  toggleWebsitesOpen
 }) => {
   // const [preferencesOpen, togglePreferencesOpen] = useState(false);
   function handleClick() {
     togglePreferencesOpen(!preferencesOpen);
     console.log(`the button was clicked`);
+
+    if (websitesOpen) {
+      console.log(`websites is open`);
+      toggleWebsitesOpen(!websitesOpen);
+    }
   }
 
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 24
     },
     __self: undefined
   }, __jsx("div", {
@@ -197,7 +208,7 @@ const PreferencesIcon = ({
     onClick: handleClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 25
     },
     __self: undefined
   }, __jsx("img", {
@@ -205,14 +216,14 @@ const PreferencesIcon = ({
     alt: "preferences",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 26
     },
     __self: undefined
   }), __jsx("p", {
     className: "icon-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 27
     },
     __self: undefined
   }, "preferences")));
@@ -511,17 +522,19 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const WebsitesIcon = ({
   websitesOpen,
-  toggleWebsitesOpen
+  toggleWebsitesOpen,
+  preferencesOpen,
+  togglePreferencesOpen
 }) => {
   function handleClick() {
     toggleWebsitesOpen(!websitesOpen);
-    console.log(`the button was clicked`);
+    preferencesOpen && togglePreferencesOpen(!preferencesOpen);
   }
 
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx("div", {
@@ -529,7 +542,7 @@ const WebsitesIcon = ({
     onClick: handleClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 20
     },
     __self: undefined
   }, __jsx("img", {
@@ -537,14 +550,14 @@ const WebsitesIcon = ({
     alt: "websites",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 21
     },
     __self: undefined
   }), __jsx("p", {
     className: "icon-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 22
     },
     __self: undefined
   }, "websites")));
@@ -810,7 +823,7 @@ const WebsitesWindow = ({
     },
     __self: undefined
   }, websitesOpen ? __jsx("div", {
-    className: "margin-container",
+    className: "websites-margin-container",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
@@ -1089,6 +1102,14 @@ const Home = () => {
   const constraintsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   const iconConstraints = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   const {
+    0: canDrag,
+    1: setCanDrag
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    const mediaMatch = window.matchMedia("(min-width: 500px)");
+    setCanDrag(mediaMatch.matches);
+  }, []);
+  const {
     0: wallpaper,
     1: setWallpaper
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("green");
@@ -1109,11 +1130,10 @@ const Home = () => {
     toggleWebsitesOpen(!websitesOpen);
   };
 
-  const removeDrag = Object(_utils_useMediaQuery__WEBPACK_IMPORTED_MODULE_4__["useMediaQuery"])("(max-width: 600px)");
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 40
     },
     __self: undefined
   }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -1121,22 +1141,16 @@ const Home = () => {
     className: wallpaper === "stars" ? "entire-display stars" : wallpaper === "blue" ? "entire-display blue" : "entire-display",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 41
     },
     __self: undefined
   }, __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 51
     },
     __self: undefined
-  }), removeDrag ? __jsx(_components_window__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: undefined
-  }) : __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+  }), canDrag ? __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     drag: true,
     dragMomentum: false,
     dragConstraints: {
@@ -1147,23 +1161,29 @@ const Home = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 54
     },
     __self: undefined
   }, __jsx(_components_window__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 64
     },
     __self: undefined
-  })), __jsx(_components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  })) : __jsx(_components_window__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: undefined
+  }), __jsx(_components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_7__["default"], {
     preferencesOpen: preferencesOpen,
     handleClick: handleClickPreferences,
     setWallpaper: setWallpaper,
     wallpaper: wallpaper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 70
     },
     __self: undefined
   }), __jsx(_components_websitesWindow__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1171,7 +1191,7 @@ const Home = () => {
     handleClick: handleClickWebsites,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 77
     },
     __self: undefined
   }), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -1179,7 +1199,7 @@ const Home = () => {
     ref: iconConstraints,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 82
     },
     __self: undefined
   }, __jsx(_components_Icons__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -1189,7 +1209,7 @@ const Home = () => {
     websitesOpen: websitesOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 83
     },
     __self: undefined
   }))));
@@ -1241,9 +1261,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-const useMediaQuery = ({
-  query
-}) => {
+const useMediaQuery = query => {
   const mediaMatch = window.matchMedia(query);
   const {
     0: matches,

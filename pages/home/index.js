@@ -17,6 +17,13 @@ const Home = () => {
   const constraintsRef = useRef(null);
   const iconConstraints = useRef(null);
 
+  const [canDrag, setCanDrag] = useState(false);
+
+  useEffect(() => {
+    const mediaMatch = window.matchMedia("(min-width: 500px)");
+    setCanDrag(mediaMatch.matches);
+  }, []);
+
   const [wallpaper, setWallpaper] = useState("green");
   const [preferencesOpen, togglePreferencesOpen] = useState(false);
   const [websitesOpen, toggleWebsitesOpen] = useState(false);
@@ -28,8 +35,6 @@ const Home = () => {
   const handleClickWebsites = () => {
     toggleWebsitesOpen(!websitesOpen);
   };
-
-  const removeDrag = useMediaQuery("(max-width: 600px)");
 
   return (
     <Fragment>
@@ -45,9 +50,7 @@ const Home = () => {
       >
         <Nav />
 
-        {removeDrag ? (
-          <Window />
-        ) : (
+        {canDrag ? (
           <motion.div
             drag
             dragMomentum={false}
@@ -60,6 +63,8 @@ const Home = () => {
           >
             <Window />
           </motion.div>
+        ) : (
+          <Window />
         )}
 
         <PreferencesWindow

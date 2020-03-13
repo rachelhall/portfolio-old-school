@@ -36,7 +36,9 @@ var Icons = function Icons(_ref) {
     __self: this
   }, __jsx(_WebsitesIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {
     websitesOpen: websitesOpen,
+    preferencesOpen: preferencesOpen,
     toggleWebsitesOpen: toggleWebsitesOpen,
+    togglePreferencesOpen: togglePreferencesOpen,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
@@ -44,10 +46,12 @@ var Icons = function Icons(_ref) {
     __self: this
   }), __jsx(_PreferencesIcon__WEBPACK_IMPORTED_MODULE_3__["default"], {
     togglePreferencesOpen: togglePreferencesOpen,
+    toggleWebsitesOpen: toggleWebsitesOpen,
     preferencesOpen: preferencesOpen,
+    websitesOpen: websitesOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 21
     },
     __self: this
   }));
@@ -82,18 +86,25 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var PreferencesIcon = function PreferencesIcon(_ref) {
   var setWallpaper = _ref.setWallpaper,
       togglePreferencesOpen = _ref.togglePreferencesOpen,
-      preferencesOpen = _ref.preferencesOpen;
+      preferencesOpen = _ref.preferencesOpen,
+      websitesOpen = _ref.websitesOpen,
+      toggleWebsitesOpen = _ref.toggleWebsitesOpen;
 
   // const [preferencesOpen, togglePreferencesOpen] = useState(false);
   function handleClick() {
     togglePreferencesOpen(!preferencesOpen);
     console.log("the button was clicked");
+
+    if (websitesOpen) {
+      console.log("websites is open");
+      toggleWebsitesOpen(!websitesOpen);
+    }
   }
 
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 24
     },
     __self: this
   }, __jsx("div", {
@@ -101,7 +112,7 @@ var PreferencesIcon = function PreferencesIcon(_ref) {
     onClick: handleClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 25
     },
     __self: this
   }, __jsx("img", {
@@ -109,14 +120,14 @@ var PreferencesIcon = function PreferencesIcon(_ref) {
     alt: "preferences",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 26
     },
     __self: this
   }), __jsx("p", {
     className: "icon-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 27
     },
     __self: this
   }, "preferences")));
@@ -378,17 +389,19 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 var WebsitesIcon = function WebsitesIcon(_ref) {
   var websitesOpen = _ref.websitesOpen,
-      toggleWebsitesOpen = _ref.toggleWebsitesOpen;
+      toggleWebsitesOpen = _ref.toggleWebsitesOpen,
+      preferencesOpen = _ref.preferencesOpen,
+      togglePreferencesOpen = _ref.togglePreferencesOpen;
 
   function handleClick() {
     toggleWebsitesOpen(!websitesOpen);
-    console.log("the button was clicked");
+    preferencesOpen && togglePreferencesOpen(!preferencesOpen);
   }
 
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 19
     },
     __self: this
   }, __jsx("div", {
@@ -396,7 +409,7 @@ var WebsitesIcon = function WebsitesIcon(_ref) {
     onClick: handleClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 20
     },
     __self: this
   }, __jsx("img", {
@@ -404,14 +417,14 @@ var WebsitesIcon = function WebsitesIcon(_ref) {
     alt: "websites",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 21
     },
     __self: this
   }), __jsx("p", {
     className: "icon-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 22
     },
     __self: this
   }, "websites")));
@@ -642,7 +655,7 @@ var WebsitesWindow = function WebsitesWindow(_ref) {
     },
     __self: this
   }, websitesOpen ? __jsx("div", {
-    className: "margin-container",
+    className: "websites-margin-container",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
@@ -13155,17 +13168,26 @@ var Home = function Home() {
   var constraintsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   var iconConstraints = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("green"),
-      wallpaper = _useState[0],
-      setWallpaper = _useState[1];
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      canDrag = _useState[0],
+      setCanDrag = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      preferencesOpen = _useState2[0],
-      togglePreferencesOpen = _useState2[1];
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var mediaMatch = window.matchMedia("(min-width: 500px)");
+    setCanDrag(mediaMatch.matches);
+  }, []);
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("green"),
+      wallpaper = _useState2[0],
+      setWallpaper = _useState2[1];
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      websitesOpen = _useState3[0],
-      toggleWebsitesOpen = _useState3[1];
+      preferencesOpen = _useState3[0],
+      togglePreferencesOpen = _useState3[1];
+
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      websitesOpen = _useState4[0],
+      toggleWebsitesOpen = _useState4[1];
 
   var handleClickPreferences = function handleClickPreferences() {
     togglePreferencesOpen(!preferencesOpen);
@@ -13175,11 +13197,10 @@ var Home = function Home() {
     toggleWebsitesOpen(!websitesOpen);
   };
 
-  var removeDrag = Object(_utils_useMediaQuery__WEBPACK_IMPORTED_MODULE_4__["useMediaQuery"])("(max-width: 600px)");
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 40
     },
     __self: this
   }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -13187,22 +13208,16 @@ var Home = function Home() {
     className: wallpaper === "stars" ? "entire-display stars" : wallpaper === "blue" ? "entire-display blue" : "entire-display",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 41
     },
     __self: this
   }, __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 51
     },
     __self: this
-  }), removeDrag ? __jsx(_components_window__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: this
-  }) : __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+  }), canDrag ? __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     drag: true,
     dragMomentum: false,
     dragConstraints: {
@@ -13213,23 +13228,29 @@ var Home = function Home() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 54
     },
     __self: this
   }, __jsx(_components_window__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 64
     },
     __self: this
-  })), __jsx(_components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  })) : __jsx(_components_window__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: this
+  }), __jsx(_components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_7__["default"], {
     preferencesOpen: preferencesOpen,
     handleClick: handleClickPreferences,
     setWallpaper: setWallpaper,
     wallpaper: wallpaper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 70
     },
     __self: this
   }), __jsx(_components_websitesWindow__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -13237,7 +13258,7 @@ var Home = function Home() {
     handleClick: handleClickWebsites,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 77
     },
     __self: this
   }), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -13245,7 +13266,7 @@ var Home = function Home() {
     ref: iconConstraints,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 82
     },
     __self: this
   }, __jsx(_components_Icons__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -13255,7 +13276,7 @@ var Home = function Home() {
     websitesOpen: websitesOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 83
     },
     __self: this
   }))));
@@ -13296,8 +13317,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-var useMediaQuery = function useMediaQuery(_ref) {
-  var query = _ref.query;
+var useMediaQuery = function useMediaQuery(query) {
   var mediaMatch = window.matchMedia(query);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(mediaMatch.matches),
@@ -13319,7 +13339,7 @@ var useMediaQuery = function useMediaQuery(_ref) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!*******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fthomasharbin%2FDocuments%2FGitHub%2Fportfolio-old-school%2Fpages%2Findex.js ***!
   \*******************************************************************************************************************************************************/
@@ -13342,5 +13362,5 @@ module.exports = dll_0fb095e325d7ebf261c3;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js","styles"]]]);
+},[[3,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

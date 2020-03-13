@@ -10,7 +10,7 @@ const WebsitesWindow = ({ websitesOpen, handleClick }) => {
   return (
     <Fragment>
       {websitesOpen ? (
-        <div className="margin-container">
+        <div className="websites-margin-container">
           <motion.div
             drag
             dragMomentum={false}
