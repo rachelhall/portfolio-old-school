@@ -10,8 +10,11 @@ const WebsitesWindow = ({ websitesOpen, handleClick }) => {
   return (
     <Fragment>
       {websitesOpen ? (
-        <div className="margin-container">
+        <div className="websites-margin-container">
           <motion.div
+            drag
+            dragMomentum={false}
+            dragConstraints={{ left: -80, top: -50, bottom: 500, right: 300 }}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.25 }}

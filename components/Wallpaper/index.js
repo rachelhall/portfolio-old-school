@@ -13,6 +13,10 @@ const Wallpaper = ({ wallpaper, setWallpaper }) => {
     setWallpaper("green");
     console.log(wallpaper)
   }
+  function setBlue() {
+    setWallpaper("blue");
+    console.log(wallpaper)
+  }
 
   return (
     <Fragment>
@@ -26,6 +30,10 @@ const Wallpaper = ({ wallpaper, setWallpaper }) => {
           </button>
           <button onClick={setStars}>
             <img src="/wallpaper/stars.png" alt="stars background" 
+            className={wallpaper == 'stars' ? `active-wallpaper` : ``}/>
+          </button>
+          <button onClick={setBlue}>
+            <img src="/wallpaper/blue.png" alt="stars background" 
             className={wallpaper == 'stars' ? `active-wallpaper` : ``}/>
           </button>
         </div>

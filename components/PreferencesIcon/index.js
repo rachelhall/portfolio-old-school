@@ -7,12 +7,18 @@ import { Fragment, useState } from "react";
 const PreferencesIcon = ({
   setWallpaper,
   togglePreferencesOpen,
-  preferencesOpen
+  preferencesOpen,
+  websitesOpen,
+  toggleWebsitesOpen
 }) => {
   // const [preferencesOpen, togglePreferencesOpen] = useState(false);
   function handleClick() {
     togglePreferencesOpen(!preferencesOpen);
     console.log(`the button was clicked`);
+    if (websitesOpen) {
+      console.log(`websites is open`)
+      toggleWebsitesOpen(!websitesOpen);
+    }
   }
   return (
     <Fragment>

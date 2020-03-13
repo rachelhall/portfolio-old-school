@@ -13,11 +13,16 @@ const Icons = ({
     <Fragment>
       <WebsitesIcon
         websitesOpen={websitesOpen}
+        preferencesOpen={preferencesOpen}
         toggleWebsitesOpen={toggleWebsitesOpen}
-      />
+        togglePreferencesOpen={togglePreferencesOpen}
+        
+        />
       <PreferencesIcon
         togglePreferencesOpen={togglePreferencesOpen}
+        toggleWebsitesOpen={toggleWebsitesOpen}
         preferencesOpen={preferencesOpen}
+        websitesOpen={websitesOpen}
       />
     </Fragment>
   );

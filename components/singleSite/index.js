@@ -8,8 +8,8 @@ const sites = [
   },
   {
     name: "Texas Leaguer Brewing",
-    url: "https://txleaguer.com/"
-  }
+    url: "https://txleaguer.com/  "
+  },
   {
     name: "Mariela",
     url: "https://cocky-roentgen-cbc28d.netlify.com/"

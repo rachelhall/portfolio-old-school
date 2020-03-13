@@ -98,6 +98,9 @@ body {
 .stars {
   background: url("/wallpaper/stars.png"); }
 
+.blue {
+  background: url("/wallpaper/blue.png"); }
+
 div {
   font-family: 'Courier New', Courier, monospace; }
 
@@ -204,7 +207,8 @@ img {
   width: 65px; }
 
 .wallpaper-content {
-  padding: 1rem; }
+  padding: 1rem;
+  z-index: 7; }
   .wallpaper-content h3 {
     font-weight: 600; }
   .wallpaper-content button {
@@ -223,6 +227,9 @@ img {
   margin-left: 6rem;
   margin-top: -10rem;
   padding: 0; }
+  @media only screen and (max-width: 600px) {
+    .preferences-margin-container {
+      margin-left: 3rem; } }
 
 header {
   border-top: 2px double #222;
@@ -238,8 +245,8 @@ header {
     font-weight: 600;
     color: black; }
 
-.preferences-container {
-  z-index: 5;
+.preferences-margin-container {
+  z-index: 7;
   padding: 0; }
 
 .singleSite-link {
@@ -265,7 +272,7 @@ header {
   height: 300px;
   border: 3px double #777;
   overflow-y: scroll;
-  z-index: 4;
+  z-index: 10;
   margin: -95px auto;
   box-shadow: 6px 5px 10px -6px rgba(0, 0, 0, 0.75); }
   .websites-window ul {
@@ -274,9 +281,14 @@ header {
     .websites-window {
       width: 320px; } }
 
-.margin-container {
+.websites-margin-container {
   margin-left: 10%;
-  margin-top: -325px; }
+  margin-top: -325px;
+  z-index: 10; }
+  @media only screen and (max-width: 600px) {
+    .websites-margin-container {
+      margin-left: 3.2rem;
+      margin-top: -10rem; } }
 
 .websites-window li {
   color: var(--font-color); }

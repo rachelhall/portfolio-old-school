@@ -11,12 +11,16 @@ const PreferencesWindow = ({
   setWallpaper,
   handleClick,
   preferencesOpen
+  // startDrag
 }) => {
   return (
     <Fragment>
       {preferencesOpen ? (
         <div className="preferences-margin-container">
           <motion.div
+            drag
+            dragMomentum={false}
+            dragConstraints={{ left: -300, top: -50, bottom: 500, right: 300 }}
             className="preferences-container websites-window"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}

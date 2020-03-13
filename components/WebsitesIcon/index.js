@@ -4,12 +4,17 @@ import { motion } from "framer-motion";
 import "./styles.module.scss";
 import { Fragment, useState } from "react";
 
-const WebsitesIcon = ({ websitesOpen, toggleWebsitesOpen }) => {
-  
+const WebsitesIcon = ({
+  websitesOpen,
+  toggleWebsitesOpen,
+  preferencesOpen,
+  togglePreferencesOpen
+}) => {
   function handleClick() {
     toggleWebsitesOpen(!websitesOpen);
-    console.log(`the button was clicked`);
+    preferencesOpen && togglePreferencesOpen(!preferencesOpen);
   }
+
   return (
     <Fragment>
       <div className="single-icon" onClick={handleClick}>

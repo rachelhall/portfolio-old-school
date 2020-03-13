@@ -2,6 +2,9 @@
     margin-left: 6rem;
     margin-top: -10rem;
     padding: 0;
+    @media only screen and (max-width: 600px) {
+        margin-left: 3rem;
+      }
 }
 
 header {
@@ -20,7 +23,7 @@ header {
     }
 }
 
-.preferences-container {
-    z-index: 5;
+.preferences-margin-container {
+    z-index: 7;
     padding: 0;
 }
