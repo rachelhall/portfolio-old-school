@@ -1,8 +1,9 @@
-import { Fragment } from "react";
-import { motion } from "framer-motion";
+import { Fragment } from "./node_modules/react";
+import { motion } from "./node_modules/framer-motion";
 // components
-import WebsitesIcon from "../WebsitesIcon";
-import PreferencesIcon from "../PreferencesIcon";
+import WebsitesIcon from "../websitesIcon";
+import PreferencesIcon from "../preferencesIcon";
+import SingleIcon from "../singleIcon";
 const Icons = ({
   preferencesOpen,
   togglePreferencesOpen,
@@ -16,14 +17,14 @@ const Icons = ({
         preferencesOpen={preferencesOpen}
         toggleWebsitesOpen={toggleWebsitesOpen}
         togglePreferencesOpen={togglePreferencesOpen}
-        
-        />
+      />
       <PreferencesIcon
         togglePreferencesOpen={togglePreferencesOpen}
         toggleWebsitesOpen={toggleWebsitesOpen}
         preferencesOpen={preferencesOpen}
         websitesOpen={websitesOpen}
       />
+      <SingleIcon />
     </Fragment>
   );
 };

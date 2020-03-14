@@ -9,12 +9,15 @@ const PreferencesIcon = ({
   togglePreferencesOpen,
   preferencesOpen,
   websitesOpen,
-  toggleWebsitesOpen
+  toggleWebsitesOpen,
+  toggleWindowOpen,
+  windowOpen
 }) => {
   // const [preferencesOpen, togglePreferencesOpen] = useState(false);
   function handleClick() {
     togglePreferencesOpen(!preferencesOpen);
     console.log(`the button was clicked`);
+    toggleWindowOpen(!windowOpen);
     if (websitesOpen) {
       console.log(`websites is open`)
       toggleWebsitesOpen(!websitesOpen);

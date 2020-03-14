@@ -12,6 +12,8 @@ import Icons from "../../components/Icons";
 import PreferencesWindow from "../../components/PreferencesWindow";
 import WebsitesWindow from "../../components/websitesWindow";
 import Nav from "../../components/nav";
+import ReusableWindow from "../../components/reusableWindow";
+import SingleSite from "../../components/singleSite"
 
 const Home = () => {
   const constraintsRef = useRef(null);
@@ -28,6 +30,8 @@ const Home = () => {
   const [preferencesOpen, togglePreferencesOpen] = useState(false);
   const [websitesOpen, toggleWebsitesOpen] = useState(false);
 
+  const [windowOpen, toggleWindowOpen] = useState(true);
+
   const handleClickPreferences = () => {
     togglePreferencesOpen(!preferencesOpen);
   };
@@ -35,6 +39,14 @@ const Home = () => {
   const handleClickWebsites = () => {
     toggleWebsitesOpen(!websitesOpen);
   };
+
+
+
+  const handleClickWindow = () => {
+    toggleWindowOpen(!windowOpen)
+  } 
+
+  const windowData = [{ title: "Websites" }, { title: "Preferences" }];
 
   return (
     <Fragment>
@@ -50,7 +62,7 @@ const Home = () => {
       >
         <Nav />
 
-        {canDrag ? (
+        {/* {canDrag ? (
           <motion.div
             drag
             dragMomentum={false}
@@ -65,7 +77,7 @@ const Home = () => {
           </motion.div>
         ) : (
           <Window />
-        )}
+        )} */}
 
         <PreferencesWindow
           preferencesOpen={preferencesOpen}
@@ -77,6 +89,7 @@ const Home = () => {
         <WebsitesWindow
           websitesOpen={websitesOpen}
           handleClick={handleClickWebsites}
+          title={windowData[0].title}
         />
 
         <motion.div className="icons-container" ref={iconConstraints}>
@@ -85,7 +98,11 @@ const Home = () => {
             preferencesOpen={preferencesOpen}
             toggleWebsitesOpen={toggleWebsitesOpen}
             websitesOpen={websitesOpen}
+            toggleWindowOpen={toggleWindowOpen}
+            windowOpen={windowOpen}
+            
           />
+          <ReusableWindow title={windowData[0].title} bodyContent={<SingleSite />} toggleWindowOpen={toggleWindowOpen} />
         </motion.div>
       </motion.div>
     </Fragment>

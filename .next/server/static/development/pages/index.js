@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -697,6 +697,95 @@ const Nav = () => {
 
 /***/ }),
 
+/***/ "./components/reusableWindow/index.js":
+/*!********************************************!*\
+  !*** ./components/reusableWindow/index.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.scss */ "./components/reusableWindow/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/reusableWindow/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const ReusableWindow = ({
+  handleClick,
+  title,
+  bodyContent,
+  windowOpen
+}) => {
+  return __jsx("div", {
+    className: "margin-container",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: undefined
+  }, windowOpen ? __jsx("div", {
+    className: "window",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, __jsx("header", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "close-button",
+    onClick: handleClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, "\u2716"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }, title)), __jsx("div", {
+    className: "body-content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, bodyContent)) : __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ReusableWindow);
+
+/***/ }),
+
+/***/ "./components/reusableWindow/styles.scss":
+/*!***********************************************!*\
+  !*** ./components/reusableWindow/styles.scss ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./components/singleSite/index.js":
 /*!****************************************!*\
   !*** ./components/singleSite/index.js ***!
@@ -814,7 +903,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const WebsitesWindow = ({
   websitesOpen,
-  handleClick
+  handleClick,
+  title
 }) => {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
@@ -873,7 +963,7 @@ const WebsitesWindow = ({
       lineNumber: 27
     },
     __self: undefined
-  }, "Websites")), __jsx("div", {
+  }, title)), __jsx("div", {
     className: "singleSite-container",
     __source: {
       fileName: _jsxFileName,
@@ -1082,6 +1172,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/PreferencesWindow */ "./components/PreferencesWindow/index.js");
 /* harmony import */ var _components_websitesWindow__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/websitesWindow */ "./components/websitesWindow/index.js");
 /* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/nav */ "./components/nav/index.js");
+/* harmony import */ var _components_reusableWindow__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/reusableWindow */ "./components/reusableWindow/index.js");
+/* harmony import */ var _components_singleSite__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/singleSite */ "./components/singleSite/index.js");
 var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/pages/home/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1091,6 +1183,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  // utils
 
  //componenets
+
+
 
 
 
@@ -1121,6 +1215,10 @@ const Home = () => {
     0: websitesOpen,
     1: toggleWebsitesOpen
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: windowOpen,
+    1: toggleWindowOpen
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
 
   const handleClickPreferences = () => {
     togglePreferencesOpen(!preferencesOpen);
@@ -1130,10 +1228,19 @@ const Home = () => {
     toggleWebsitesOpen(!websitesOpen);
   };
 
+  const handleClickWindow = () => {
+    toggleWindowOpen(!windowOpen);
+  };
+
+  const windowData = [{
+    title: "Websites"
+  }, {
+    title: "Preferences"
+  }];
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -1141,39 +1248,13 @@ const Home = () => {
     className: wallpaper === "stars" ? "entire-display stars" : wallpaper === "blue" ? "entire-display blue" : "entire-display",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 53
     },
     __self: undefined
   }, __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: undefined
-  }), canDrag ? __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    drag: true,
-    dragMomentum: false,
-    dragConstraints: {
-      left: -300,
-      top: -50,
-      bottom: 500,
-      right: 300
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54
-    },
-    __self: undefined
-  }, __jsx(_components_window__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    },
-    __self: undefined
-  })) : __jsx(_components_window__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 63
     },
     __self: undefined
   }), __jsx(_components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -1183,15 +1264,16 @@ const Home = () => {
     wallpaper: wallpaper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 82
     },
     __self: undefined
   }), __jsx(_components_websitesWindow__WEBPACK_IMPORTED_MODULE_8__["default"], {
     websitesOpen: websitesOpen,
     handleClick: handleClickWebsites,
+    title: windowData[0].title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 89
     },
     __self: undefined
   }), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -1199,7 +1281,7 @@ const Home = () => {
     ref: iconConstraints,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 95
     },
     __self: undefined
   }, __jsx(_components_Icons__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -1207,9 +1289,26 @@ const Home = () => {
     preferencesOpen: preferencesOpen,
     toggleWebsitesOpen: toggleWebsitesOpen,
     websitesOpen: websitesOpen,
+    toggleWindowOpen: toggleWindowOpen,
+    windowOpen: windowOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 96
+    },
+    __self: undefined
+  }), __jsx(_components_reusableWindow__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    title: windowData[0].title,
+    bodyContent: __jsx(_components_singleSite__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 105
+      },
+      __self: undefined
+    }),
+    toggleWindowOpen: toggleWindowOpen,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105
     },
     __self: undefined
   }))));
@@ -1278,7 +1377,7 @@ const useMediaQuery = query => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

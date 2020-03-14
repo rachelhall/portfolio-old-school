@@ -6,7 +6,7 @@ import SingleSite from "../singleSite";
 
 // styles
 import "./styles.scss";
-const WebsitesWindow = ({ websitesOpen, handleClick }) => {
+const WebsitesWindow = ({ websitesOpen, handleClick, title }) => {
   return (
     <Fragment>
       {websitesOpen ? (
@@ -24,7 +24,7 @@ const WebsitesWindow = ({ websitesOpen, handleClick }) => {
               <p className="close-button" onClick={handleClick}>
                 &#10006;
               </p>
-              <p>Websites</p>
+              <p>{title}</p>
             </header>
             <div className="singleSite-container">
               <SingleSite />
