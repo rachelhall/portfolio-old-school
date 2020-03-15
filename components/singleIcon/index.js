@@ -1,11 +1,14 @@
 import { Fragment } from "react";
 
-const SingleIcon = () => {
+const SingleIcon = ({ title, iconUrl, setWindowOpen }) => {
+  const handleClickWindow = () => {
+    setWindowOpen(`${title}open`);
+  }
   return (
     <Fragment>
-      <div className="single-icon" onClick={handleClick}>
-        <img src="/icon/mac.png" alt="preferences" />
-        <p className="icon-title">preferences</p>
+      <div className="single-icon" onClick={handleClickWindow}>
+        <img src={iconUrl} alt={title} />
+        <p className="icon-title">{title}</p>
       </div>
     </Fragment>
   );

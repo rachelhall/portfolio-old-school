@@ -12,8 +12,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/framer-motion.es.js");
-/* harmony import */ var _WebsitesIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../WebsitesIcon */ "./components/WebsitesIcon/index.js");
-/* harmony import */ var _PreferencesIcon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../PreferencesIcon */ "./components/PreferencesIcon/index.js");
+/* harmony import */ var _websitesIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../websitesIcon */ "./components/websitesIcon/index.js");
+/* harmony import */ var _preferencesIcon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../preferencesIcon */ "./components/preferencesIcon/index.js");
+/* harmony import */ var _singleIcon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../singleIcon */ "./components/singleIcon/index.js");
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../data.js */ "./data.js");
 var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/Icons/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -23,117 +25,36 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
 var Icons = function Icons(_ref) {
   var preferencesOpen = _ref.preferencesOpen,
       togglePreferencesOpen = _ref.togglePreferencesOpen,
       websitesOpen = _ref.websitesOpen,
-      toggleWebsitesOpen = _ref.toggleWebsitesOpen;
+      toggleWebsitesOpen = _ref.toggleWebsitesOpen,
+      handleClickWindow = _ref.handleClickWindow;
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 18
     },
     __self: this
-  }, __jsx(_WebsitesIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    websitesOpen: websitesOpen,
-    preferencesOpen: preferencesOpen,
-    toggleWebsitesOpen: toggleWebsitesOpen,
-    togglePreferencesOpen: togglePreferencesOpen,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }), __jsx(_PreferencesIcon__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    togglePreferencesOpen: togglePreferencesOpen,
-    toggleWebsitesOpen: toggleWebsitesOpen,
-    preferencesOpen: preferencesOpen,
-    websitesOpen: websitesOpen,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
+  }, _data_js__WEBPACK_IMPORTED_MODULE_5__["default"].map(function (window) {
+    console.log(window.title);
+    return __jsx(_singleIcon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      title: window.title,
+      iconUrl: window.icon,
+      handleClickWindow: handleClickWindow,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: this
+    });
   }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Icons);
-
-/***/ }),
-
-/***/ "./components/PreferencesIcon/index.js":
-/*!*********************************************!*\
-  !*** ./components/PreferencesIcon/index.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/framer-motion.es.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.scss */ "./components/PreferencesIcon/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/PreferencesIcon/index.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- // styles
-
-
-
-
-var PreferencesIcon = function PreferencesIcon(_ref) {
-  var setWallpaper = _ref.setWallpaper,
-      togglePreferencesOpen = _ref.togglePreferencesOpen,
-      preferencesOpen = _ref.preferencesOpen,
-      websitesOpen = _ref.websitesOpen,
-      toggleWebsitesOpen = _ref.toggleWebsitesOpen;
-
-  // const [preferencesOpen, togglePreferencesOpen] = useState(false);
-  function handleClick() {
-    togglePreferencesOpen(!preferencesOpen);
-    console.log("the button was clicked");
-
-    if (websitesOpen) {
-      console.log("websites is open");
-      toggleWebsitesOpen(!websitesOpen);
-    }
-  }
-
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }, __jsx("div", {
-    className: "single-icon",
-    onClick: handleClick,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, __jsx("img", {
-    src: "/icon/mac.png",
-    alt: "preferences",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }), __jsx("p", {
-    className: "icon-title",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: this
-  }, "preferences")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (PreferencesIcon);
 
 /***/ }),
 
@@ -365,75 +286,6 @@ var Wallpaper = function Wallpaper(_ref) {
 
 /***/ }),
 
-/***/ "./components/WebsitesIcon/index.js":
-/*!******************************************!*\
-  !*** ./components/WebsitesIcon/index.js ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/framer-motion.es.js");
-/* harmony import */ var _styles_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.module.scss */ "./components/WebsitesIcon/styles.module.scss");
-/* harmony import */ var _styles_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_module_scss__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/WebsitesIcon/index.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- // styles
-
-
-
-
-var WebsitesIcon = function WebsitesIcon(_ref) {
-  var websitesOpen = _ref.websitesOpen,
-      toggleWebsitesOpen = _ref.toggleWebsitesOpen,
-      preferencesOpen = _ref.preferencesOpen,
-      togglePreferencesOpen = _ref.togglePreferencesOpen;
-
-  function handleClick() {
-    toggleWebsitesOpen(!websitesOpen);
-    preferencesOpen && togglePreferencesOpen(!preferencesOpen);
-  }
-
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
-  }, __jsx("div", {
-    className: "single-icon",
-    onClick: handleClick,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: this
-  }, __jsx("img", {
-    src: "/icon/folder.png",
-    alt: "websites",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  }), __jsx("p", {
-    className: "icon-title",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: this
-  }, "websites")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (WebsitesIcon);
-
-/***/ }),
-
 /***/ "./components/nav/index.js":
 /*!*********************************!*\
   !*** ./components/nav/index.js ***!
@@ -542,6 +394,85 @@ var Nav = function Nav() {
 
 /***/ }),
 
+/***/ "./components/preferencesIcon/index.js":
+/*!*********************************************!*\
+  !*** ./components/preferencesIcon/index.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/framer-motion.es.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.scss */ "./components/preferencesIcon/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/preferencesIcon/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // styles
+
+
+
+
+var PreferencesIcon = function PreferencesIcon(_ref) {
+  var setWallpaper = _ref.setWallpaper,
+      togglePreferencesOpen = _ref.togglePreferencesOpen,
+      preferencesOpen = _ref.preferencesOpen,
+      websitesOpen = _ref.websitesOpen,
+      toggleWebsitesOpen = _ref.toggleWebsitesOpen,
+      toggleWindowOpen = _ref.toggleWindowOpen,
+      windowOpen = _ref.windowOpen;
+
+  // const [preferencesOpen, togglePreferencesOpen] = useState(false);
+  function handleClick() {
+    togglePreferencesOpen(!preferencesOpen);
+    console.log("the button was clicked");
+    toggleWindowOpen(!windowOpen);
+
+    if (websitesOpen) {
+      console.log("websites is open");
+      toggleWebsitesOpen(!websitesOpen);
+    }
+  }
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "single-icon",
+    onClick: handleClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  }, __jsx("img", {
+    src: "/icon/mac.png",
+    alt: "preferences",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }), __jsx("p", {
+    className: "icon-title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: this
+  }, "preferences")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (PreferencesIcon);
+
+/***/ }),
+
 /***/ "./components/reusableWindow/index.js":
 /*!********************************************!*\
   !*** ./components/reusableWindow/index.js ***!
@@ -569,20 +500,20 @@ var ReusableWindow = function ReusableWindow(_ref) {
     className: "margin-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 6
     },
     __self: this
-  }, windowOpen ? __jsx("div", {
+  }, windowOpen === "".concat(title, "open") ? __jsx("div", {
     className: "window",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, __jsx("header", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: this
   }, __jsx("p", {
@@ -590,32 +521,93 @@ var ReusableWindow = function ReusableWindow(_ref) {
     onClick: handleClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 10
     },
     __self: this
   }, "\u2716"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
     },
     __self: this
   }, title)), __jsx("div", {
     className: "body-content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 15
     },
     __self: this
   }, bodyContent)) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 18
     },
     __self: this
   }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ReusableWindow);
+
+/***/ }),
+
+/***/ "./components/singleIcon/index.js":
+/*!****************************************!*\
+  !*** ./components/singleIcon/index.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/singleIcon/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+var SingleIcon = function SingleIcon(_ref) {
+  var title = _ref.title,
+      iconUrl = _ref.iconUrl,
+      setWindowOpen = _ref.setWindowOpen;
+
+  var handleClickWindow = function handleClickWindow() {
+    setWindowOpen("".concat(title, "open"));
+  };
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "single-icon",
+    onClick: handleClickWindow,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, __jsx("img", {
+    src: iconUrl,
+    alt: title,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }), __jsx("p", {
+    className: "icon-title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, title)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SingleIcon);
 
 /***/ }),
 
@@ -658,26 +650,25 @@ var sites = [{
 }];
 
 var SingleSite = function SingleSite() {
-  console.log(sites);
   return __jsx("div", {
     className: "single-site",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 33
     },
     __self: this
   }, __jsx("ul", {
     className: "singleSite-list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 34
     },
     __self: this
   }, sites.map(function (site) {
     return __jsx("li", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 37
       },
       __self: this
     }, __jsx("a", {
@@ -686,7 +677,7 @@ var SingleSite = function SingleSite() {
       className: "singleSite-link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 38
       },
       __self: this
     }, site.name));
@@ -694,6 +685,75 @@ var SingleSite = function SingleSite() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SingleSite);
+
+/***/ }),
+
+/***/ "./components/websitesIcon/index.js":
+/*!******************************************!*\
+  !*** ./components/websitesIcon/index.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/framer-motion.es.js");
+/* harmony import */ var _styles_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.module.scss */ "./components/websitesIcon/styles.module.scss");
+/* harmony import */ var _styles_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_module_scss__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/websitesIcon/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // styles
+
+
+
+
+var WebsitesIcon = function WebsitesIcon(_ref) {
+  var websitesOpen = _ref.websitesOpen,
+      toggleWebsitesOpen = _ref.toggleWebsitesOpen,
+      preferencesOpen = _ref.preferencesOpen,
+      togglePreferencesOpen = _ref.togglePreferencesOpen;
+
+  function handleClick() {
+    toggleWebsitesOpen(!websitesOpen);
+    preferencesOpen && togglePreferencesOpen(!preferencesOpen);
+  }
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "single-icon",
+    onClick: handleClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, __jsx("img", {
+    src: "/icon/folder.png",
+    alt: "websites",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }), __jsx("p", {
+    className: "icon-title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, "websites")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (WebsitesIcon);
 
 /***/ }),
 
@@ -809,140 +869,23 @@ var WebsitesWindow = function WebsitesWindow(_ref) {
 
 /***/ }),
 
-/***/ "./components/window/index.js":
-/*!************************************!*\
-  !*** ./components/window/index.js ***!
-  \************************************/
+/***/ "./data.js":
+/*!*****************!*\
+  !*** ./data.js ***!
+  \*****************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/nav */ "./components/nav/index.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.scss */ "./components/window/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/window/index.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- //components
-
- //styles
-
-
-
-var Window = function Window(_ref) {
-  var style = _ref.style;
-  var element = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }, __jsx("div", {
-    className: "window",
-    ref: element,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }, "Thomas Harbin: Front End Developer"), __jsx("h2", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
-  }, "Favorites:"), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: this
-  }), __jsx("ul", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
-  }, __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
-  }, "- React"), __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
-  }, "- Next JS"), __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: this
-  }, "- Vanilla JS"), __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  }, "- Cosmic JS")), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
-  }), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, "Thomas went from music teacher to tech. After years teaching university music classes, Thomas began revisiting a high school interest in web development and discovered the same type of creativity he loved about music abounded in the dev space."), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: this
-  }), __jsx("p", {
-    "data-type": true,
-    "data-type-min": "1",
-    "data-type-max": "9",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: this
-  }, "Outside of work, Thomas enjoys playing and recording music with friends and skateboarding/rollerblading."), __jsx("p", {
-    "data-type": true,
-    "data-type-min": "1",
-    "data-type-max": "12",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: this
-  }, "Spending 15 years as a classical pianist taught Thomas the power of deep work and focused attention. Playing the piano is a lot more like coding than most people would think. It requires setting goals, working long, focused hours and self-evaluation. Classical pianists are good at identifying and learning new skills."), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
-  })));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Window);
+var windowData = [{
+  title: "Websites",
+  icon: "/icon/folder.png"
+}, {
+  title: "Preferences",
+  icon: "/icon/mac.png"
+}];
+/* harmony default export */ __webpack_exports__["default"] = (windowData);
 
 /***/ }),
 
@@ -10359,21 +10302,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_styles_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_home_styles_scss__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/dynamic */ "./node_modules/next/dist/next-server/lib/dynamic.js");
 /* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_dynamic__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _utils_useMediaQuery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/useMediaQuery */ "./utils/useMediaQuery.js");
-/* harmony import */ var _components_window__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/window */ "./components/window/index.js");
-/* harmony import */ var _components_Icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Icons */ "./components/Icons/index.js");
-/* harmony import */ var _components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/PreferencesWindow */ "./components/PreferencesWindow/index.js");
-/* harmony import */ var _components_websitesWindow__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/websitesWindow */ "./components/websitesWindow/index.js");
-/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/nav */ "./components/nav/index.js");
-/* harmony import */ var _components_reusableWindow__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/reusableWindow */ "./components/reusableWindow/index.js");
-/* harmony import */ var _components_singleSite__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/singleSite */ "./components/singleSite/index.js");
+/* harmony import */ var _components_Icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Icons */ "./components/Icons/index.js");
+/* harmony import */ var _components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/PreferencesWindow */ "./components/PreferencesWindow/index.js");
+/* harmony import */ var _components_websitesWindow__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/websitesWindow */ "./components/websitesWindow/index.js");
+/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/nav */ "./components/nav/index.js");
+/* harmony import */ var _components_reusableWindow__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/reusableWindow */ "./components/reusableWindow/index.js");
+/* harmony import */ var _components_singleSite__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/singleSite */ "./components/singleSite/index.js");
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../data.js */ "./data.js");
 var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/pages/home/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-
- // utils
 
  //componenets
 
@@ -10382,6 +10322,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+ // data
 
 
 
@@ -10402,39 +10343,14 @@ var Home = function Home() {
       wallpaper = _useState2[0],
       setWallpaper = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      preferencesOpen = _useState3[0],
-      togglePreferencesOpen = _useState3[1];
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("".concat(_data_js__WEBPACK_IMPORTED_MODULE_10__["default"][1].title, "open")),
+      windowOpen = _useState3[0],
+      setWindowOpen = _useState3[1];
 
-  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      websitesOpen = _useState4[0],
-      toggleWebsitesOpen = _useState4[1];
-
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
-      windowOpen = _useState5[0],
-      toggleWindowOpen = _useState5[1];
-
-  var handleClickPreferences = function handleClickPreferences() {
-    togglePreferencesOpen(!preferencesOpen);
-  };
-
-  var handleClickWebsites = function handleClickWebsites() {
-    toggleWebsitesOpen(!websitesOpen);
-  };
-
-  var handleClickWindow = function handleClickWindow() {
-    toggleWindowOpen(!windowOpen);
-  };
-
-  var windowData = [{
-    title: "Websites"
-  }, {
-    title: "Preferences"
-  }];
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 33
     },
     __self: this
   }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -10442,67 +10358,46 @@ var Home = function Home() {
     className: wallpaper === "stars" ? "entire-display stars" : wallpaper === "blue" ? "entire-display blue" : "entire-display",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 34
     },
     __self: this
-  }, __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 44
     },
     __self: this
-  }), __jsx(_components_PreferencesWindow__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    preferencesOpen: preferencesOpen,
-    handleClick: handleClickPreferences,
-    setWallpaper: setWallpaper,
-    wallpaper: wallpaper,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82
-    },
-    __self: this
-  }), __jsx(_components_websitesWindow__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    websitesOpen: websitesOpen,
-    handleClick: handleClickWebsites,
-    title: windowData[0].title,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 89
-    },
-    __self: this
+  }), _data_js__WEBPACK_IMPORTED_MODULE_10__["default"].map(function (window) {
+    return __jsx(_components_reusableWindow__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      title: window.title,
+      bodyContent: __jsx(_components_singleSite__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }),
+      windowOpen: windowOpen,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
+      },
+      __self: this
+    });
   }), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     className: "icons-container",
     ref: iconConstraints,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 73
     },
     __self: this
-  }, __jsx(_components_Icons__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    togglePreferencesOpen: togglePreferencesOpen,
-    preferencesOpen: preferencesOpen,
-    toggleWebsitesOpen: toggleWebsitesOpen,
-    websitesOpen: websitesOpen,
-    toggleWindowOpen: toggleWindowOpen,
+  }, __jsx(_components_Icons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    setWindowOpen: setWindowOpen,
     windowOpen: windowOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
-    },
-    __self: this
-  }), __jsx(_components_reusableWindow__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    title: windowData[0].title,
-    bodyContent: __jsx(_components_singleSite__WEBPACK_IMPORTED_MODULE_11__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 105
-      },
-      __self: this
-    }),
-    toggleWindowOpen: toggleWindowOpen,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 74
     },
     __self: this
   }))));
@@ -10530,42 +10425,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./utils/useMediaQuery.js":
-/*!********************************!*\
-  !*** ./utils/useMediaQuery.js ***!
-  \********************************/
-/*! exports provided: useMediaQuery */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useMediaQuery", function() { return useMediaQuery; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-var useMediaQuery = function useMediaQuery(query) {
-  var mediaMatch = window.matchMedia(query);
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(mediaMatch.matches),
-      matches = _useState[0],
-      setMatches = _useState[1];
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    var handler = function handler(e) {
-      return setMatches(e.matches);
-    };
-
-    mediaMatch.addListener(handler);
-    return function () {
-      return mediaMatch.removeListener(handler);
-    };
-  });
-  return matches;
-};
-
-/***/ }),
-
-/***/ 2:
+/***/ 3:
 /*!*******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fthomasharbin%2FDocuments%2FGitHub%2Fportfolio-old-school%2Fpages%2Findex.js ***!
   \*******************************************************************************************************************************************************/
@@ -10588,5 +10448,5 @@ module.exports = dll_0fb095e325d7ebf261c3;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js","styles"]]]);
+},[[3,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

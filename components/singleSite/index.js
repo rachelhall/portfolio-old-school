@@ -1,5 +1,5 @@
 // styles
-import "./styles.scss"
+import "./styles.scss";
 
 const sites = [
   {
@@ -26,12 +26,9 @@ const sites = [
     name: "List App",
     url: "https://the-list.netlify.com/"
   }
-
 ];
 
 const SingleSite = () => {
-
-  console.log(sites);
   return (
     <div className="single-site">
       <ul className="singleSite-list">

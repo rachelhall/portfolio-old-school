@@ -1,18 +1,20 @@
-import { Fragment } from "./node_modules/react";
-import { motion } from "./node_modules/framer-motion";
+import { Fragment } from "react";
+import { motion } from "framer-motion";
 // components
 import WebsitesIcon from "../websitesIcon";
 import PreferencesIcon from "../preferencesIcon";
 import SingleIcon from "../singleIcon";
+
+import windowData from "../../data.js";
+
 const Icons = ({
-  preferencesOpen,
-  togglePreferencesOpen,
-  websitesOpen,
-  toggleWebsitesOpen
+ toggleWindowOpen
 }) => {
+
+  };
   return (
     <Fragment>
-      <WebsitesIcon
+      {/* <WebsitesIcon
         websitesOpen={websitesOpen}
         preferencesOpen={preferencesOpen}
         toggleWebsitesOpen={toggleWebsitesOpen}
@@ -23,8 +25,21 @@ const Icons = ({
         toggleWebsitesOpen={toggleWebsitesOpen}
         preferencesOpen={preferencesOpen}
         websitesOpen={websitesOpen}
-      />
-      <SingleIcon />
+      /> */}
+
+      {windowData.map(window => {
+        console.log(window.title);
+        
+          console.log(windowOpen);
+        return (
+          <SingleIcon
+            title={window.title}
+            iconUrl={window.icon}
+            handleClickWindow={handleClickWindow}
+            setWindowOpen={setWindowOpen}
+          />
+        );
+      })}
     </Fragment>
   );
 };
