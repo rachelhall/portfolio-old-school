@@ -3,8 +3,9 @@ import { Fragment } from "react";
 // styles
 import "./styles.scss";
 
-const Wallpaper = ({ wallpaper, setWallpaper }) => {
+const Wallpaper = ({ wallpaper, setWallpaper, changeWallpaper }) => {
   function setStars() {
+    changeWallpaper('stars')
     setWallpaper("stars");
     console.log("stars was clicked");
   }

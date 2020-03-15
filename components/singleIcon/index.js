@@ -1,5 +1,7 @@
 import { Fragment } from "react";
 
+import "./styles.scss";
+
 const SingleIcon = ({ title, iconUrl, setWindowOpen }) => {
   const handleClickWindow = () => {
     setWindowOpen(`${title}open`);

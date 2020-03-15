@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import "../home/styles.scss";
 import { useState, useRef, Fragment, useEffect } from "react";
-import dynamic from "next/dynamic";
+
+// styles
+import "../home/styles.scss";
 
 //componenets
 import Icons from "../../components/Icons";
@@ -10,6 +11,7 @@ import WebsitesWindow from "../../components/websitesWindow";
 import Nav from "../../components/nav";
 import ReusableWindow from "../../components/reusableWindow";
 import SingleSite from "../../components/singleSite";
+
 
 // data
 import windowData from "../../data.js";
@@ -27,7 +29,15 @@ const Home = () => {
 
   const [wallpaper, setWallpaper] = useState("green");
 
-  const [windowOpen, setWindowOpen] = useState(`${windowData[1].title}open`);
+  const changeWallpaper = newWallpaper => {
+    setWallpaper(newWallpaper);
+  };
+
+  const [windowOpen, setWindowOpen] = useState(`${windowData[0].title}open`);
+
+  const closeWindow = () => {
+    setWindowOpen(null);
+  };
 
   return (
     <Fragment>
@@ -62,11 +72,24 @@ const Home = () => {
 
         {windowData.map(window => {
           return (
-            <ReusableWindow
-              title={window.title}
-              bodyContent={<SingleSite />}
-              windowOpen={windowOpen}
-            />
+            <motion.div
+              drag
+              dragMomentum={false}
+              dragConstraints={{
+                left: -300,
+                top: -50,
+                bottom: 500,
+                right: 300
+              }}
+            >
+              <ReusableWindow
+                title={window.title}
+                bodyContent={window.bodyContent}
+                windowOpen={windowOpen}
+                closeWindow={closeWindow}
+                changeWallpaper={changeWallpaper}
+              />
+            </motion.div>
           );
         })}
 
