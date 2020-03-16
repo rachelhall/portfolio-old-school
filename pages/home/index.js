@@ -1,5 +1,5 @@
+import { useState, useRef, Fragment, useEffect, createContext } from "react";
 import { motion } from "framer-motion";
-import { useState, useRef, Fragment, useEffect } from "react";
 
 // styles
 import "../home/styles.scss";
@@ -12,9 +12,10 @@ import Nav from "../../components/nav";
 import ReusableWindow from "../../components/reusableWindow";
 import SingleSite from "../../components/singleSite";
 
-
 // data
 import windowData from "../../data.js";
+
+export const WindowCTX = createContext({});
 
 const Home = () => {
   const constraintsRef = useRef(null);
@@ -27,7 +28,12 @@ const Home = () => {
     setCanDrag(mediaMatch.matches);
   }, []);
 
-  const [wallpaper, setWallpaper] = useState("green");
+  const [wallpaper, setWallpaper] = useState("blue");
+
+  // create context
+  // create default state
+  // wrap in a provider
+  // useContext Hook
 
   const changeWallpaper = newWallpaper => {
     setWallpaper(newWallpaper);
@@ -41,62 +47,70 @@ const Home = () => {
 
   return (
     <Fragment>
-      <motion.div
-        ref={constraintsRef}
-        className={
-          wallpaper === "stars"
-            ? "entire-display stars"
-            : wallpaper === "blue"
-            ? "entire-display blue"
-            : "entire-display"
-        }
+      <WindowCTX.Provider
+        value={{ changeWallpaper: changeWallpaper, test: "testing CTX" }}
       >
-        <Nav />
+        <motion.div
+          ref={constraintsRef}
+          className={
+            wallpaper === "stars"
+              ? "entire-display stars"
+              : wallpaper === "green"
+              ? "entire-display green"
+              : wallpaper === "gray"
+              ? "entire-display gray"
+              : "entire-display"
+          }
+        >
+          <Nav />
 
-        {/* {canDrag ? (
+          {/* {canDrag ? (
           <motion.div
-            drag
-            dragMomentum={false}
-            dragConstraints={{
-              left: -300,
-              top: -50,
-              bottom: 500,
-              right: 300
-            }}
+          drag
+          dragMomentum={false}
+          dragConstraints={{
+            left: -300,
+            top: -50,
+            bottom: 500,
+            right: 300
+          }}
           >
-            <Window />
-          </motion.div>
-        ) : (
           <Window />
-        )} */}
+          </motion.div>
+          ) : (
+            <Window />
+          )} */}
 
-        {windowData.map(window => {
-          return (
-            <motion.div
-              drag
-              dragMomentum={false}
-              dragConstraints={{
-                left: -300,
-                top: -50,
-                bottom: 500,
-                right: 300
-              }}
-            >
-              <ReusableWindow
-                title={window.title}
-                bodyContent={window.bodyContent}
-                windowOpen={windowOpen}
-                closeWindow={closeWindow}
-                changeWallpaper={changeWallpaper}
-              />
-            </motion.div>
-          );
-        })}
+          {windowData.map(window => {
+            return (
+              <motion.div
+                drag
+                dragMomentum={false}
+                dragConstraints={{
+                  left: -300,
+                  top: -50,
+                  bottom: 500,
+                  right: 300
+                }}
+              >
+                <ReusableWindow
+                  title={window.title}
+                  header={window.header}
+                  bodyContent={window.bodyContent}
+                  background={window.background}
+                  windowOpen={windowOpen}
+                  closeWindow={closeWindow}
+                  changeWallpaper={changeWallpaper}
+                />
+              </motion.div>
+            );
+          })}
 
-        <motion.div className="icons-container" ref={iconConstraints}>
-          <Icons setWindowOpen={setWindowOpen} windowOpen={windowOpen} />
+          <motion.div className="icons-container" ref={iconConstraints}>
+            <Icons setWindowOpen={setWindowOpen} windowOpen={windowOpen} />
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </WindowCTX.Provider>
     </Fragment>
   );
 };

@@ -3,16 +3,26 @@ import Wallpaper from "./components/wallpaper";
 import About from "./components/about";
 
 const windowData = [
-  { title: "About", icon: "/icon/thomas-icon.png", bodyContent: {component: <About />} },
+  {
+    title: "About",
+    header: false,
+    icon: "/icon/thomas-icon.png",
+    bodyContent: { component: <About /> },
+    background: "black"
+  },
   {
     title: "Websites",
+    header: true,
     icon: "/icon/folder.png",
-    bodyContent: { component: <SingleSite />, props: "body props" }
+    bodyContent: { component: <SingleSite /> },
+    background: ""
   },
   {
     title: "Preferences",
+    header: true,
     icon: "/icon/mac.png",
-    bodyContent: { component: <Wallpaper />, props: "" }
+    bodyContent: { component: <Wallpaper /> },
+    background: ""
   }
 ];
 

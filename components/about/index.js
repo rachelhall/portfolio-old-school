@@ -1,9 +1,12 @@
 import { Fragment } from "react";
 
+
+import './styles.scss';
+
 const About = () => {
   return (
     <Fragment>
-      <div>
+      <div className="about">
         <h1>Thomas Harbin: Front End Developer</h1>
         <h2>Favorites:</h2>
         <br />

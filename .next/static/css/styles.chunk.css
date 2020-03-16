@@ -58,6 +58,7 @@ img {
   --medium-gray: #191a1a;
   --green: #7cf277;
   --white: rgb(253 253 253);
+  --retro-green: #33ff00;
   --space-xl: 24px;
   --space-lg: 16px;
   --space-md: 8px;
@@ -73,13 +74,8 @@ img {
   text-transform: capitalize;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #ffffff;
-    --foreground: #eaeaea;
-    --font-color: #000001;
-    --active-state: #e8e4e4;
-    --medium-gray: #eaeaea; } }
+p {
+  letter-spacing: .35px; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -93,13 +89,16 @@ body {
     font-weight: 900; }
 
 body {
-  background: #007576; }
+  background: url("/wallpaper/blue.png"); }
 
 .stars {
   background: url("/wallpaper/stars.png"); }
 
-.blue {
-  background: url("/wallpaper/blue.png"); }
+.green {
+  background: url("/wallpaper/green.png"); }
+
+.gray {
+  background: url("/wallpaper/gray.png"); }
 
 div {
   font-family: 'Courier New', Courier, monospace; }
@@ -112,6 +111,10 @@ div {
 
 .icons-container {
   display: flex; }
+  .icons-container p.icon-title {
+    color: white;
+    margin-top: 3px;
+    font-weight: 600; }
 
 .single-icon {
   margin: 2rem;
@@ -144,6 +147,10 @@ div {
 
 .active-wallpaper {
   outline: 3px solid lightblue; }
+
+.about {
+  padding: 1rem;
+  font-weight: 800; }
 
 .wallpaper-content {
   padding: 1rem;
@@ -275,6 +282,11 @@ nav {
 
 .close-button {
   cursor: default; }
+
+.black-background {
+  background: #222;
+  color: var(--retro-green);
+  text-transform: uppercase; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

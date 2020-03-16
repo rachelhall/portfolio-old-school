@@ -12,11 +12,16 @@
     }
     @media only screen and (max-width: 600px) {
         width: 320px;
-        
       }
-    
   }
 
   .close-button {
     cursor: default;
+}
+
+.black-background {
+    background:#222;
+    color: var(--retro-green);
+    text-transform: uppercase;
+    
 }
