@@ -1,21 +1,25 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 
 // styles
 import "./styles.scss";
+import { WindowCTX } from "../../pages/home";
 
-const Wallpaper = ({ wallpaper, setWallpaper }) => {
+const Wallpaper = ({ wallpaper, setWallpaper, changeWallpaper }) => {
+  const ctx = useContext(WindowCTX);
+  
   function setStars() {
-    setWallpaper("stars");
-    console.log("stars was clicked");
+    ctx.changeWallpaper('stars');
   }
 
   function setGreen() {
-    setWallpaper("green");
-    console.log(wallpaper)
+    ctx.changeWallpaper("green");
   }
   function setBlue() {
-    setWallpaper("blue");
-    console.log(wallpaper)
+    ctx.changeWallpaper("blue");
+  }
+
+  function setGray() {
+    ctx.changeWallpaper("gray");
   }
 
   return (
@@ -24,7 +28,7 @@ const Wallpaper = ({ wallpaper, setWallpaper }) => {
         <h3>Select Wallpaper</h3>
         <div className="wallpaper-choices">
           <button onClick={setGreen}>
-            <img src="/icon/green-background.png" alt="green background" 
+            <img src="/wallpaper/green.png" alt="green background" 
             className={wallpaper == 'green' ? `active-wallpaper` : ``}
             ></img>
           </button>
@@ -34,7 +38,11 @@ const Wallpaper = ({ wallpaper, setWallpaper }) => {
           </button>
           <button onClick={setBlue}>
             <img src="/wallpaper/blue.png" alt="stars background" 
-            className={wallpaper == 'stars' ? `active-wallpaper` : ``}/>
+            className={wallpaper == 'blue' ? `active-wallpaper` : ``}/>
+          </button>
+          <button onClick={setGray}>
+            <img src="/wallpaper/gray.png" alt="stars background" 
+            className={wallpaper == 'gray' ? `active-wallpaper` : ``}/>
           </button>
         </div>
       </div>

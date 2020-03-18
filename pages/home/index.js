@@ -1,17 +1,18 @@
+import { useState, useRef, Fragment, useEffect, createContext } from "react";
 import { motion } from "framer-motion";
-import "../home/styles.scss";
-import { useState, useRef, Fragment, useEffect } from "react";
-import dynamic from "next/dynamic";
 
-// utils
-import { useMediaQuery } from "../../utils/useMediaQuery";
+// styles
+import "../home/styles.scss";
 
 //componenets
-import Window from "../../components/window";
 import Icons from "../../components/Icons";
-import PreferencesWindow from "../../components/PreferencesWindow";
-import WebsitesWindow from "../../components/websitesWindow";
 import Nav from "../../components/nav";
+import ReusableWindow from "../../components/reusableWindow";
+
+// data
+import windowData from "../../data.js";
+
+export const WindowCTX = createContext({});
 
 const Home = () => {
   const constraintsRef = useRef(null);
@@ -24,70 +25,91 @@ const Home = () => {
     setCanDrag(mediaMatch.matches);
   }, []);
 
-  const [wallpaper, setWallpaper] = useState("green");
-  const [preferencesOpen, togglePreferencesOpen] = useState(false);
-  const [websitesOpen, toggleWebsitesOpen] = useState(false);
+  const [wallpaper, setWallpaper] = useState("blue");
 
-  const handleClickPreferences = () => {
-    togglePreferencesOpen(!preferencesOpen);
+  // create context
+  // create default state
+  // wrap in a provider
+  // useContext Hook
+
+  const changeWallpaper = newWallpaper => {
+    setWallpaper(newWallpaper);
   };
 
-  const handleClickWebsites = () => {
-    toggleWebsitesOpen(!websitesOpen);
+  const [windowOpen, setWindowOpen] = useState(`${windowData[0].title}open`);
+
+  const closeWindow = () => {
+    setWindowOpen(null);
   };
 
   return (
     <Fragment>
-      <motion.div
-        ref={constraintsRef}
-        className={
-          wallpaper === "stars"
-            ? "entire-display stars"
-            : wallpaper === "blue"
-            ? "entire-display blue"
-            : "entire-display"
-        }
+      <WindowCTX.Provider
+        value={{ changeWallpaper: changeWallpaper, test: "testing CTX" }}
       >
-        <Nav />
+        <motion.div
+          ref={constraintsRef}
+          className={
+            wallpaper === "stars"
+              ? "entire-display stars"
+              : wallpaper === "green"
+              ? "entire-display green"
+              : wallpaper === "gray"
+              ? "entire-display gray"
+              : "entire-display"
+          }
+        >
+          <Nav />
 
-        {canDrag ? (
+          {/* {canDrag ? (
           <motion.div
-            drag
-            dragMomentum={false}
-            dragConstraints={{
-              left: -300,
-              top: -50,
-              bottom: 500,
-              right: 300
-            }}
+          drag
+          dragMomentum={false}
+          dragConstraints={{
+            left: -300,
+            top: -50,
+            bottom: 500,
+            right: 300
+          }}
           >
-            <Window />
-          </motion.div>
-        ) : (
           <Window />
-        )}
+          </motion.div>
+          ) : (
+            <Window />
+          )} */}
 
-        <PreferencesWindow
-          preferencesOpen={preferencesOpen}
-          handleClick={handleClickPreferences}
-          setWallpaper={setWallpaper}
-          wallpaper={wallpaper}
-        />
+          {windowData.map((window, i) => {
+            return (
+              <motion.div
+                drag
+                dragMomentum={false}
+                dragConstraints={{
+                  left: -300,
+                  top: -50,
+                  bottom: 500,
+                  right: 300
+                }}
+                className="window-container"
+              >
+                <ReusableWindow
+                  title={window.title}
+                  header={window.header}
+                  bodyContent={window.bodyContent}
+                  background={window.background}
+                  windowOpen={windowOpen}
+                  closeWindow={closeWindow}
+                  changeWallpaper={changeWallpaper}
+                  key={i}
+                />
+              </motion.div>
+            );
+          })}
 
-        <WebsitesWindow
-          websitesOpen={websitesOpen}
-          handleClick={handleClickWebsites}
-        />
-
-        <motion.div className="icons-container" ref={iconConstraints}>
-          <Icons
-            togglePreferencesOpen={togglePreferencesOpen}
-            preferencesOpen={preferencesOpen}
-            toggleWebsitesOpen={toggleWebsitesOpen}
-            websitesOpen={websitesOpen}
-          />
+          <motion.div className="icons-container" ref={iconConstraints}>
+            <Icons setWindowOpen={setWindowOpen} windowOpen={windowOpen} />
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </WindowCTX.Provider>
     </Fragment>
   );
 };

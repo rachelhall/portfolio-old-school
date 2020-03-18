@@ -1,29 +1,24 @@
 import { Fragment } from "react";
 import { motion } from "framer-motion";
 // components
-import WebsitesIcon from "../WebsitesIcon";
-import PreferencesIcon from "../PreferencesIcon";
-const Icons = ({
-  preferencesOpen,
-  togglePreferencesOpen,
-  websitesOpen,
-  toggleWebsitesOpen
-}) => {
+import SingleIcon from "../singleIcon";
+
+// data
+import windowData from "../../data.js";
+
+const Icons = ({ setWindowOpen }) => {
   return (
     <Fragment>
-      <WebsitesIcon
-        websitesOpen={websitesOpen}
-        preferencesOpen={preferencesOpen}
-        toggleWebsitesOpen={toggleWebsitesOpen}
-        togglePreferencesOpen={togglePreferencesOpen}
-        
-        />
-      <PreferencesIcon
-        togglePreferencesOpen={togglePreferencesOpen}
-        toggleWebsitesOpen={toggleWebsitesOpen}
-        preferencesOpen={preferencesOpen}
-        websitesOpen={websitesOpen}
-      />
+      {windowData.map((window, i) => {
+        return (
+          <SingleIcon
+            title={window.title}
+            iconUrl={window.icon}
+            setWindowOpen={setWindowOpen}
+            key={i}
+          />
+        );
+      })}
     </Fragment>
   );
 };

@@ -1,14 +1,17 @@
 body {
-    background: #007576; 
+    background: url('/wallpaper/blue.png');
 }
 
 .stars {
     background: url('/wallpaper/stars.png');
 }
 
-.blue {
-    background: url('/wallpaper/blue.png');
-    
+.green {
+    background: url('/wallpaper/green.png');
+}
+
+.gray {
+    background: url('/wallpaper/gray.png');
 }
 
 div {
@@ -20,9 +23,18 @@ div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    .window-container {
+        margin: auto;
+    }
    
 }
 
 .icons-container {
     display: flex;
+    p.icon-title {
+        color: white;
+        margin-top: 3px;
+        font-weight: 600;
+    }
 }
