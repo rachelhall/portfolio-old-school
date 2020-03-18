@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -127,11 +127,12 @@ const Icons = ({
       lineNumber: 11
     },
     __self: undefined
-  }, _data_js__WEBPACK_IMPORTED_MODULE_3__["default"].map(window => {
+  }, _data_js__WEBPACK_IMPORTED_MODULE_3__["default"].map((window, i) => {
     return __jsx(_singleIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {
       title: window.title,
       iconUrl: window.icon,
       setWindowOpen: setWindowOpen,
+      key: i,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 14
@@ -303,47 +304,49 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const MovieModal = ({
   toggleModalOpen,
-  videoId,
-  setVideoId
+  videoId
 }) => {
+  console.log(videoId);
   return __jsx("div", {
     className: "videoplayer-container modal",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
+      lineNumber: 7
     },
     __self: undefined
   }, __jsx("div", {
-    class: "modal-header",
+    className: "modal-header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 8
     },
     __self: undefined
   }, __jsx("span", {
-    class: "close-btn",
+    className: "close-btn",
     onClick: toggleModalOpen,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: undefined
-  }, "\xD7")), __jsx("div", {
-    class: "plyr__video-embed modal-content",
-    id: "player",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     },
     __self: undefined
-  }, __jsx("iframe", {
-    src: videoId,
-    allowfullscreen: true,
-    allowtransparency: true,
-    allow: "autoplay",
+  }, "\xD7")), __jsx("div", {
+    class: "modal-content",
+    id: "player",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 13
+    },
+    __self: undefined
+  }, __jsx("iframe", {
+    title: "vimeo-player",
+    src: videoId,
+    width: "640",
+    height: "360",
+    frameborder: "0",
+    allowfullscreen: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
     },
     __self: undefined
   })));
@@ -364,19 +367,13 @@ const MovieModal = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var plyr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! plyr */ "plyr");
-/* harmony import */ var plyr__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(plyr__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_movieModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/movieModal */ "./components/movieModal/index.js");
-/* harmony import */ var _styles_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles.module.scss */ "./components/movies/styles.module.scss");
-/* harmony import */ var _styles_module_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_module_scss__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../data */ "./data.js");
+/* harmony import */ var _components_movieModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/movieModal */ "./components/movieModal/index.js");
+/* harmony import */ var _styles_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.module.scss */ "./components/movies/styles.module.scss");
+/* harmony import */ var _styles_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_module_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../data */ "./data.js");
 var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/movies/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
  // components
 
  // styles
@@ -389,7 +386,7 @@ const Movies = () => {
   const {
     0: videoId,
     1: setVideoId
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(_data__WEBPACK_IMPORTED_MODULE_5__["movies"][0].url);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(_data__WEBPACK_IMPORTED_MODULE_3__["movies"][0].url);
   const {
     0: modalOpen,
     1: setModalOpen
@@ -402,53 +399,54 @@ const Movies = () => {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 21
     },
     __self: undefined
-  }, modalOpen ? __jsx(_components_movieModal__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, modalOpen ? __jsx(_components_movieModal__WEBPACK_IMPORTED_MODULE_1__["default"], {
     toggleModalOpen: toggleModalOpen,
     videoId: videoId,
-    setVideoId: setVideoId,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 23
     },
     __self: undefined
   }) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 25
     },
     __self: undefined
   }), __jsx("div", {
     className: "single-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 27
     },
     __self: undefined
   }, __jsx("ul", {
     className: "singleItem-list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 28
     },
     __self: undefined
-  }, _data__WEBPACK_IMPORTED_MODULE_5__["movies"].map((item, i) => {
+  }, _data__WEBPACK_IMPORTED_MODULE_3__["movies"].map((item, i) => {
     return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 31
       },
       __self: undefined
     }, __jsx("li", {
       className: "singleItem-link",
-      onClick: toggleModalOpen //, setVideoId(item.url)
-      ,
+      onClick: () => {
+        setVideoId(item.url);
+        setModalOpen(!modalOpen);
+      },
       key: i,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 32
       },
       __self: undefined
     }, item.name));
@@ -1174,10 +1172,7 @@ const Home = () => {
   const {
     0: wallpaper,
     1: setWallpaper
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("blue"); // create context
-  // create default state
-  // wrap in a provider
-  // useContext Hook
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("blue");
 
   const changeWallpaper = newWallpaper => {
     setWallpaper(newWallpaper);
@@ -1195,7 +1190,7 @@ const Home = () => {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 41
     },
     __self: undefined
   }, __jsx(WindowCTX.Provider, {
@@ -1205,7 +1200,7 @@ const Home = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 42
     },
     __self: undefined
   }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -1213,13 +1208,13 @@ const Home = () => {
     className: wallpaper === "stars" ? "entire-display stars" : wallpaper === "green" ? "entire-display green" : wallpaper === "gray" ? "entire-display gray" : "entire-display",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 45
     },
     __self: undefined
   }, __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 57
     },
     __self: undefined
   }), _data_js__WEBPACK_IMPORTED_MODULE_6__["default"].map((window, i) => {
@@ -1235,7 +1230,7 @@ const Home = () => {
       className: "window-container",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 78
       },
       __self: undefined
     }, __jsx(_components_reusableWindow__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1249,7 +1244,7 @@ const Home = () => {
       key: i,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94
+        lineNumber: 89
       },
       __self: undefined
     }));
@@ -1258,7 +1253,7 @@ const Home = () => {
     ref: iconConstraints,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 103
     },
     __self: undefined
   }, __jsx(_components_Icons__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1266,7 +1261,7 @@ const Home = () => {
     windowOpen: windowOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 104
     },
     __self: undefined
   })))));
@@ -1305,7 +1300,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -1325,28 +1320,6 @@ module.exports = __webpack_require__(/*! /Users/thomasharbin/Documents/GitHub/po
 /***/ (function(module, exports) {
 
 module.exports = require("framer-motion");
-
-/***/ }),
-
-/***/ "plyr":
-/*!***********************!*\
-  !*** external "plyr" ***!
-  \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("plyr");
-
-/***/ }),
-
-/***/ "prop-types":
-/*!*****************************!*\
-  !*** external "prop-types" ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types");
 
 /***/ }),
 

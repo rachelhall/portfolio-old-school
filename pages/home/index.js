@@ -27,11 +27,6 @@ const Home = () => {
 
   const [wallpaper, setWallpaper] = useState("blue");
 
-  // create context
-  // create default state
-  // wrap in a provider
-  // useContext Hook
-
   const changeWallpaper = newWallpaper => {
     setWallpaper(newWallpaper);
   };

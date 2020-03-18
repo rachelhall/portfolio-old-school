@@ -26,7 +26,8 @@
     "plyr": "^3.5.10",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-draggable": "^4.2.0"
+    "react-draggable": "^4.2.0",
+    "vimeo": "^2.1.1"
   },
   "devDependencies": {
     "node-sass": "^4.13.1",

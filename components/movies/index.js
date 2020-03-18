@@ -1,6 +1,4 @@
 import { useState, useEffect, Fragment } from "react";
-import PropTypes from "prop-types";
-import plyr from "plyr";
 
 // components
 import MovieModal from "../../components/movieModal";
@@ -22,11 +20,7 @@ const Movies = () => {
   return (
     <Fragment>
       {modalOpen ? (
-        <MovieModal
-          toggleModalOpen={toggleModalOpen}
-          videoId={videoId}
-          setVideoId={setVideoId}
-        />
+        <MovieModal toggleModalOpen={toggleModalOpen} videoId={videoId} />
       ) : (
         <div></div>
       )}
@@ -37,10 +31,10 @@ const Movies = () => {
               <Fragment>
                 <li
                   className="singleItem-link"
-                  onClick={
-                    toggleModalOpen
-                    //, setVideoId(item.url)
-                  }
+                  onClick={ () => {
+                    setVideoId(item.url);
+                    setModalOpen(!modalOpen);
+                  }}
                   key={i}
                 >
                   {item.name}

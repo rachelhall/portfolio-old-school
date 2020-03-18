@@ -128,7 +128,8 @@ div {
 
 .single-item li {
   padding: .5rem 1rem;
-  color: black; }
+  color: black;
+  cursor: pointer; }
 
 .singleItem-list li:nth-child(even) {
   background: var(--lightest-gray); }
