@@ -22,7 +22,8 @@
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "framer-motion": "^1.9.0",
-    "next": "^9.2.2",
+    "next": "^9.3.1",
+    "plyr": "^3.5.10",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-draggable": "^4.2.0"

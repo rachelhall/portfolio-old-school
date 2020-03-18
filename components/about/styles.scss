@@ -1,4 +1,8 @@
 .about {
     padding: 1rem;
-    font-weight: 800;
+    p, li, h1, h2 {
+        font-weight: normal;
+        letter-spacing: .35px;
+        font-family: Courier, monospace;
+    }
 }

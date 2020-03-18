@@ -23,5 +23,24 @@
     background:#222;
     color: var(--retro-green);
     text-transform: uppercase;
-    
+}
+
+.margin-container {
+    margin: auto;
+}
+
+header {
+    border-top: 2px double #222;
+    border-bottom: 2px double #222;
+    padding: 6px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    background: rgb(228, 228, 228);
+    p {
+        font-weight: 600;
+        color: black;
+    }
 }

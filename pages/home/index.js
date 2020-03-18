@@ -6,11 +6,8 @@ import "../home/styles.scss";
 
 //componenets
 import Icons from "../../components/Icons";
-import PreferencesWindow from "../../components/PreferencesWindow";
-import WebsitesWindow from "../../components/websitesWindow";
 import Nav from "../../components/nav";
 import ReusableWindow from "../../components/reusableWindow";
-import SingleSite from "../../components/singleSite";
 
 // data
 import windowData from "../../data.js";
@@ -81,7 +78,7 @@ const Home = () => {
             <Window />
           )} */}
 
-          {windowData.map(window => {
+          {windowData.map((window, i) => {
             return (
               <motion.div
                 drag
@@ -92,6 +89,7 @@ const Home = () => {
                   bottom: 500,
                   right: 300
                 }}
+                className="window-container"
               >
                 <ReusableWindow
                   title={window.title}
@@ -101,6 +99,7 @@ const Home = () => {
                   windowOpen={windowOpen}
                   closeWindow={closeWindow}
                   changeWallpaper={changeWallpaper}
+                  key={i}
                 />
               </motion.div>
             );

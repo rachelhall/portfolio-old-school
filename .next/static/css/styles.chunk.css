@@ -108,6 +108,8 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
+  .entire-display .window-container {
+    margin: auto; }
 
 .icons-container {
   display: flex; }
@@ -124,81 +126,14 @@ div {
   .single-icon img {
     width: 65px; }
 
-.singleSite-link {
-  padding: 1rem; }
-
-.single-site li {
-  padding: .5rem 0;
+.single-item li {
+  padding: .5rem 1rem;
   color: black; }
 
-.wallpaper-content {
-  padding: 1rem;
-  z-index: 7; }
-  .wallpaper-content h3 {
-    font-weight: 600; }
-  .wallpaper-content button {
-    text-transform: uppercase;
-    display: inline-block;
-    margin: var(--space-lg) 6px;
-    transform: scale(0.97);
-    transition: transform .125s; }
-  .wallpaper-content button:hover {
-    transform: scale(1); }
-
-.active-wallpaper {
-  outline: 3px solid lightblue; }
-
-.about {
-  padding: 1rem;
-  font-weight: 800; }
-
-.wallpaper-content {
-  padding: 1rem;
-  z-index: 7; }
-  .wallpaper-content h3 {
-    font-weight: 600; }
-  .wallpaper-content button {
-    text-transform: uppercase;
-    display: inline-block;
-    margin: var(--space-lg) 6px;
-    transform: scale(0.97);
-    transition: transform .125s; }
-  .wallpaper-content button:hover {
-    transform: scale(1); }
-
-.active-wallpaper {
-  outline: 3px solid lightblue; }
-
-.preferences-margin-container {
-  margin-left: 6rem;
-  margin-top: -10rem;
-  padding: 0; }
-  @media only screen and (max-width: 600px) {
-    .preferences-margin-container {
-      margin-left: 3rem; } }
-
-header {
-  border-top: 2px double #222;
-  border-bottom: 2px double #222;
-  padding: 6px;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  width: 100%;
-  text-align: center;
-  background: #e4e4e4; }
-  header p {
-    font-weight: 600;
-    color: black; }
-
-.preferences-margin-container {
-  z-index: 7;
-  padding: 0; }
-
-.singleSite-list li:nth-child(even) {
+.singleItem-list li:nth-child(even) {
   background: var(--lightest-gray); }
 
-.singleSite-list li:hover {
+.singleItem-list li:hover {
   background: var(--light-gray);
   transition: background 0.2s; }
 
@@ -231,6 +166,95 @@ header {
 
 .websites-window li {
   color: var(--font-color); }
+
+.wallpaper-content {
+  padding: 1rem;
+  z-index: 7; }
+  .wallpaper-content h3 {
+    font-weight: 600; }
+  .wallpaper-content button {
+    text-transform: uppercase;
+    display: inline-block;
+    margin: var(--space-lg) 6px;
+    transform: scale(0.97);
+    transition: transform .125s; }
+  .wallpaper-content button:hover {
+    transform: scale(1); }
+
+.active-wallpaper {
+  outline: 3px solid lightblue; }
+
+.about {
+  padding: 1rem; }
+  .about p, .about li, .about h1, .about h2 {
+    font-weight: normal;
+    letter-spacing: .35px;
+    font-family: Courier, monospace; }
+
+.singleItem li {
+  cursor: default; }
+
+.movies-container li:nth-child(even) {
+  background: var(--lightest-gray); }
+
+.movies-container li:hover {
+  background: var(--light-gray);
+  transition: background 0.2s; }
+
+.movie-list {
+  cursor: default; }
+  .movie-list li {
+    padding: 1rem;
+    list-style: none;
+    padding: .5rem 0;
+    cursor: default; }
+
+.video-container {
+  margin: 20px auto;
+  max-width: 500px; }
+
+.singleItem-link p {
+  padding: 0 1rem; }
+
+.modal {
+  position: fixed;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.modal-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: auto;
+  height: 70%;
+  animation-name: animatetop;
+  animation-duration: 0.4s; }
+
+.close-btn {
+  float: right;
+  color: lightgray;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-right: 2rem;
+  cursor: default; }
+
+.close-btn:hover {
+  color: darkgray; }
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0; }
+  to {
+    top: 0;
+    opacity: 1; } }
 
 nav {
   border-bottom: 2px double #222;
@@ -287,6 +311,23 @@ nav {
   background: #222;
   color: var(--retro-green);
   text-transform: uppercase; }
+
+.margin-container {
+  margin: auto; }
+
+header {
+  border-top: 2px double #222;
+  border-bottom: 2px double #222;
+  padding: 6px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+  background: #e4e4e4; }
+  header p {
+    font-weight: 600;
+    color: black; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
