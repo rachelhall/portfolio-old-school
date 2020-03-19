@@ -122,7 +122,8 @@ div {
   margin: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  align-items: center; }
   .single-icon img {
     width: 65px; }
 
@@ -139,7 +140,7 @@ div {
   transition: background 0.2s; }
 
 .close-button {
-  cursor: default; }
+  cursor: pointer; }
 
 .websites-window {
   display: inline-block;
@@ -178,7 +179,8 @@ div {
     display: inline-block;
     margin: var(--space-lg) 6px;
     transform: scale(0.97);
-    transition: transform .125s; }
+    transition: transform .125s;
+    cursor: pointer; }
   .wallpaper-content button:hover {
     transform: scale(1); }
 

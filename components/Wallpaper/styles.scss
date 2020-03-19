@@ -11,7 +11,8 @@
         display: inline-block;
         margin: var(--space-lg) 6px;
         transform: scale(.97);
-        transition: transform .125s;;
+        transition: transform .125s;
+        cursor: pointer;
     }
     
     button:hover {

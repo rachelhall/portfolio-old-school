@@ -4,7 +4,7 @@ import { Fragment, useContext } from "react";
 import "./styles.scss";
 import { WindowCTX } from "../../pages/home";
 
-const Wallpaper = ({ wallpaper, setWallpaper, changeWallpaper }) => {
+const Wallpaper = ({ wallpaper }) => {
   const ctx = useContext(WindowCTX);
   
   function setStars() {

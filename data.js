@@ -6,10 +6,10 @@ import Movies from "./components/movies";
 const windowData = [
   {
     title: "About",
-    header: false,
-    icon: "/icon/thomas-icon.png",
+    header: true,
+    icon: "/icon/thomas-pixelated.png",
     bodyContent: { component: <About /> },
-    background: "black"
+    background: ""
   },
   {
     title: "Websites",

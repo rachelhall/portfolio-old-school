@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import "../home/styles.scss";
 
 //componenets
-import Icons from "../../components/Icons";
+import Icons from "../../components/icons";
 import Nav from "../../components/nav";
 import ReusableWindow from "../../components/reusableWindow";
 
@@ -20,6 +20,8 @@ const Home = () => {
 
   const [canDrag, setCanDrag] = useState(false);
 
+  const [zIndex, setZIndex] = useState(5);
+
   useEffect(() => {
     const mediaMatch = window.matchMedia("(min-width: 500px)");
     setCanDrag(mediaMatch.matches);
@@ -31,7 +33,10 @@ const Home = () => {
     setWallpaper(newWallpaper);
   };
 
-  const [windowOpen, setWindowOpen] = useState(`${windowData[0].title}open`);
+  const [windowOpen, setWindowOpen] = useState(['0id']
+    // `${windowData[0].title}open`
+  );
+  console.log({windowOpen});
 
   const closeWindow = () => {
     setWindowOpen(null);
@@ -40,7 +45,8 @@ const Home = () => {
   return (
     <Fragment>
       <WindowCTX.Provider
-        value={{ changeWallpaper: changeWallpaper, test: "testing CTX" }}
+        value={{ changeWallpaper: changeWallpaper, windowOpen: windowOpen, setWindowOpen: setWindowOpen }}
+
       >
         <motion.div
           ref={constraintsRef}
@@ -85,6 +91,7 @@ const Home = () => {
                   right: 300
                 }}
                 className="window-container"
+                key={`${i}2`}
               >
                 <ReusableWindow
                   title={window.title}
@@ -94,14 +101,20 @@ const Home = () => {
                   windowOpen={windowOpen}
                   closeWindow={closeWindow}
                   changeWallpaper={changeWallpaper}
-                  key={i}
+                  key={`${i}23`}
+                  zIndex={zIndex}
                 />
               </motion.div>
             );
           })}
 
           <motion.div className="icons-container" ref={iconConstraints}>
-            <Icons setWindowOpen={setWindowOpen} windowOpen={windowOpen} />
+            <Icons
+              // setWindowOpen={setWindowOpen}
+              // windowOpen={windowOpen}
+              zIndex={zIndex}
+              setZIndex={setZIndex}
+            />
           </motion.div>
         </motion.div>
       </WindowCTX.Provider>

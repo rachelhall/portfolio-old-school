@@ -4,7 +4,7 @@ import { useState, useEffect, Fragment } from "react";
 import MovieModal from "../../components/movieModal";
 
 // styles
-import "./styles.module.scss";
+import "./styles.scss";
 
 // data
 import { movies } from "../../data";
@@ -30,12 +30,12 @@ const Movies = () => {
             return (
               <Fragment>
                 <li
+                  key={`${i}13`}
                   className="singleItem-link"
-                  onClick={ () => {
+                  onClick={() => {
                     setVideoId(item.url);
                     setModalOpen(!modalOpen);
                   }}
-                  key={i}
                 >
                   {item.name}
                 </li>
