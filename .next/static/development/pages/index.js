@@ -36,67 +36,67 @@ var About = function About() {
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 11
     },
     __self: this
   }, "Thomas Harbin: Front End Developer"), __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: this
   }, "Favorites:"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
     },
     __self: this
   }), __jsx("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     },
     __self: this
   }, __jsx("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 15
     },
     __self: this
   }, "- React"), __jsx("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     },
     __self: this
   }, "- Next JS"), __jsx("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     },
     __self: this
   }, "- Vanilla JS"), __jsx("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 18
     },
     __self: this
   }, "- Cosmic JS")), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     },
     __self: this
   }), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 22
     },
     __self: this
   }, "Thomas went from music teacher to tech. After years teaching university music classes, Thomas began revisiting a high school interest in web development and discovered the same type of creativity he loved about music abounded in the dev space."), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 28
     },
     __self: this
   }), __jsx("p", {
@@ -105,7 +105,7 @@ var About = function About() {
     "data-type-max": "9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 29
     },
     __self: this
   }, "Outside of work, Thomas enjoys playing and recording music with friends and skateboarding/rollerblading."), __jsx("p", {
@@ -114,13 +114,13 @@ var About = function About() {
     "data-type-max": "12",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     },
     __self: this
   }, "Spending 15 years as a classical pianist taught Thomas the power of deep work and focused attention. Playing the piano is a lot more like coding than most people would think. It requires setting goals, working long, focused hours and self-evaluation. Classical pianists are good at identifying and learning new skills."), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
     },
     __self: this
   })));
@@ -168,7 +168,7 @@ var Icons = function Icons(_ref) {
       key: i,
       zIndex: zIndex,
       setZIndex: setZIndex,
-      id: "".concat(i, "id"),
+      id: window.id,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13
@@ -481,15 +481,24 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 var ReusableWindow = function ReusableWindow(_ref) {
-  var closeWindow = _ref.closeWindow,
-      title = _ref.title,
+  var title = _ref.title,
       bodyContent = _ref.bodyContent,
-      windowOpen = _ref.windowOpen,
       background = _ref.background,
       header = _ref.header,
-      zIndex = _ref.zIndex;
-  var ctx = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_components_singleIcon__WEBPACK_IMPORTED_MODULE_3__["IdCTX"]);
-  console.log("ctx.id: ".concat(ctx.id));
+      windowOpen = _ref.windowOpen,
+      id = _ref.id,
+      zIndex = _ref.zIndex,
+      setWindowOpen = _ref.setWindowOpen;
+  // const ctx = useContext(IdCTX);
+  // console.log(`ctx.id: ${ctx.id}`);
+  var filteredArray = windowOpen.filter(function (item) {
+    return item != id;
+  });
+
+  var closeWindow = function closeWindow() {
+    setWindowOpen(filteredArray);
+  };
+
   return __jsx("div", {
     className: "margin-container",
     style: {
@@ -497,10 +506,10 @@ var ReusableWindow = function ReusableWindow(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 28
     },
     __self: this
-  }, windowOpen.includes('0id') ? // === `${title}open`
+  }, windowOpen.includes(id) ? // === `${title}open`
   __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     initial: {
       scale: 0
@@ -514,19 +523,19 @@ var ReusableWindow = function ReusableWindow(_ref) {
     className: background ? "window ".concat(background, "-background") : "window",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 31
     },
     __self: this
   }, header ? __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 38
     },
     __self: this
   }, __jsx("header", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 39
     },
     __self: this
   }, __jsx("p", {
@@ -534,33 +543,33 @@ var ReusableWindow = function ReusableWindow(_ref) {
     onClick: closeWindow,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 40
     },
     __self: this
   }, "\u2716"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 43
     },
     __self: this
   }, title)), __jsx("div", {
     className: "body-content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 45
     },
     __self: this
   }, bodyContent.component)) : __jsx("div", {
     className: "body-content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 48
     },
     __self: this
   }, bodyContent.component)) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 52
     },
     __self: this
   }));
@@ -891,7 +900,8 @@ var windowData = [{
       __self: undefined
     })
   },
-  background: ""
+  background: "",
+  id: '01z'
 }, {
   title: "Websites",
   header: true,
@@ -900,12 +910,13 @@ var windowData = [{
     component: __jsx(_components_singleSite__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 19
       },
       __self: undefined
     })
   },
-  background: ""
+  background: "",
+  id: "02z"
 }, {
   title: "Preferences",
   header: true,
@@ -914,12 +925,13 @@ var windowData = [{
     component: __jsx(_components_wallpaper__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 27
       },
       __self: undefined
     })
   },
-  background: ""
+  background: "",
+  id: "03z"
 }, {
   title: "Movies",
   header: true,
@@ -928,12 +940,13 @@ var windowData = [{
     component: __jsx(_components_movies__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 35
       },
       __self: undefined
     })
   },
-  background: ""
+  background: "",
+  id: "04z"
 }];
 var sites = [{
   name: "Bible Reading App",
@@ -9569,7 +9582,7 @@ var Home = function Home() {
     setWallpaper(newWallpaper);
   };
 
-  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(['0id'] // `${windowData[0].title}open`
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(["01z"] // `${windowData[0].title}open`
   ),
       windowOpen = _useState4[0],
       setWindowOpen = _useState4[1];
@@ -9577,15 +9590,10 @@ var Home = function Home() {
   console.log({
     windowOpen: windowOpen
   });
-
-  var closeWindow = function closeWindow() {
-    setWindowOpen(null);
-  };
-
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 43
     },
     __self: this
   }, __jsx(WindowCTX.Provider, {
@@ -9596,7 +9604,7 @@ var Home = function Home() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 44
     },
     __self: this
   }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -9636,10 +9644,11 @@ var Home = function Home() {
       bodyContent: window.bodyContent,
       background: window.background,
       windowOpen: windowOpen,
-      closeWindow: closeWindow,
+      setWindowOpen: setWindowOpen,
       changeWallpaper: changeWallpaper,
       key: "".concat(i, "23"),
       zIndex: zIndex,
+      id: window.id,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 96
@@ -9651,7 +9660,7 @@ var Home = function Home() {
     ref: iconConstraints,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 112
     },
     __self: this
   }, __jsx(_components_icons__WEBPACK_IMPORTED_MODULE_3__["default"] // setWindowOpen={setWindowOpen}
@@ -9661,7 +9670,7 @@ var Home = function Home() {
     setZIndex: setZIndex,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 113
     },
     __self: this
   })))));

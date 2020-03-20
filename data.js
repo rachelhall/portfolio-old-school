@@ -9,28 +9,32 @@ const windowData = [
     header: true,
     icon: "/icon/thomas-pixelated.png",
     bodyContent: { component: <About /> },
-    background: ""
+    background: "",
+    id: '01z'
   },
   {
     title: "Websites",
     header: true,
     icon: "/icon/folder.png",
     bodyContent: { component: <SingleSite /> },
-    background: ""
+    background: "",
+    id: "02z"
   },
   {
     title: "Preferences",
     header: true,
     icon: "/icon/mac.png",
     bodyContent: { component: <Wallpaper /> },
-    background: ""
+    background: "",
+    id: "03z"
   },
   {
     title: "Movies",
     header: true,
     icon: "/icon/video.png",
     bodyContent: { component: <Movies /> },
-    background: ""
+    background: "",
+    id: "04z"
   }
 ];
 

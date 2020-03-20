@@ -16,7 +16,7 @@ const Icons = ({ setZIndex, zIndex }) => {
             key={i}
             zIndex={zIndex}
             setZIndex={setZIndex}
-            id={`${i}id`}
+            id={window.id}
           />
         );
       })}

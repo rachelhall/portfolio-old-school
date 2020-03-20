@@ -1,4 +1,4 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useState } from "react";
 import { motion } from "framer-motion";
 
 import "./styles.scss";
@@ -7,20 +7,26 @@ import "./styles.scss";
 import { IdCTX } from "../../components/singleIcon";
 
 const ReusableWindow = ({
-  closeWindow,
   title,
   bodyContent,
-  windowOpen,
   background,
   header,
-  zIndex
+  windowOpen,
+  id,
+  zIndex,
+  setWindowOpen
 }) => {
-  const ctx = useContext(IdCTX);
-  console.log(`ctx.id: ${ctx.id}`);
+  // const ctx = useContext(IdCTX);
+  // console.log(`ctx.id: ${ctx.id}`);
+
+  let filteredArray = windowOpen.filter(item => item != id);
+  const closeWindow = () => {
+    setWindowOpen(filteredArray);
+  };
 
   return (
     <div className="margin-container" style={{ zIndex: `${zIndex}` }}>
-      {windowOpen.includes('0id')  ? (
+      {windowOpen.includes(id) ? (
         // === `${title}open`
         <motion.div
           initial={{ scale: 0 }}

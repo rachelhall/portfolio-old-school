@@ -33,20 +33,20 @@ const Home = () => {
     setWallpaper(newWallpaper);
   };
 
-  const [windowOpen, setWindowOpen] = useState(['0id']
+  const [windowOpen, setWindowOpen] = useState(
+    ["01z"]
     // `${windowData[0].title}open`
   );
-  console.log({windowOpen});
-
-  const closeWindow = () => {
-    setWindowOpen(null);
-  };
+  console.log({ windowOpen });
 
   return (
     <Fragment>
       <WindowCTX.Provider
-        value={{ changeWallpaper: changeWallpaper, windowOpen: windowOpen, setWindowOpen: setWindowOpen }}
-
+        value={{
+          changeWallpaper: changeWallpaper,
+          windowOpen: windowOpen,
+          setWindowOpen: setWindowOpen
+        }}
       >
         <motion.div
           ref={constraintsRef}
@@ -99,10 +99,11 @@ const Home = () => {
                   bodyContent={window.bodyContent}
                   background={window.background}
                   windowOpen={windowOpen}
-                  closeWindow={closeWindow}
+                  setWindowOpen={setWindowOpen}
                   changeWallpaper={changeWallpaper}
                   key={`${i}23`}
                   zIndex={zIndex}
+                  id={window.id}
                 />
               </motion.div>
             );
