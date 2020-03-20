@@ -108,8 +108,6 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
-  .entire-display .window-container {
-    margin: auto; }
 
 .icons-container {
   display: flex; }
@@ -293,6 +291,7 @@ nav {
     width: 2rem; }
 
 .window {
+  margin: auto;
   display: inline-block;
   background: var(--white);
   width: 450px;
@@ -316,7 +315,11 @@ nav {
   text-transform: uppercase; }
 
 .margin-container {
-  margin: auto; }
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  top: 100px; }
 
 header {
   border-top: 2px double #222;
