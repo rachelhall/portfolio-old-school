@@ -1,6 +1,4 @@
 .window {
-    // position: absolute;
-    margin: auto;
     display: inline-block;
     background: var(--white);
     width: 450px;
@@ -21,6 +19,8 @@
     cursor: default;
 }
 
+
+
 .black-background {
     background:#222;
     color: var(--retro-green);
@@ -29,10 +29,11 @@
 
 .margin-container {
     position: absolute;
-   display: flex;
-   justify-content: center;
-   width: 100vw;
-   top: 100px;
+    top: 100px;
+    left: 100px;
+    @media only screen and (max-width: 600px) {
+        left: 28px;
+      }
 }
 
 header {

@@ -91,6 +91,10 @@ body {
 body {
   background: url("/wallpaper/blue.png"); }
 
+nav {
+  position: fixed;
+  top: 0; }
+
 .stars {
   background: url("/wallpaper/stars.png"); }
 
@@ -103,6 +107,11 @@ body {
 div {
   font-family: 'Courier New', Courier, monospace; }
 
+.desktop {
+  height: 100%;
+  position: relative;
+  display: flex; }
+
 .entire-display {
   height: 100vh;
   display: flex;
@@ -110,7 +119,9 @@ div {
   justify-content: space-between; }
 
 .icons-container {
-  display: flex; }
+  display: flex;
+  position: absolute;
+  bottom: 0; }
   .icons-container p.icon-title {
     color: white;
     margin-top: 3px;
@@ -121,9 +132,16 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center; }
+  align-items: center;
+  text-align: center; }
   .single-icon img {
-    width: 65px; }
+    width: 65px;
+    margin-bottom: 3px; }
+  @media only screen and (max-width: 600px) {
+    .single-icon {
+      margin: 1rem; }
+      .single-icon img {
+        width: 40px; } }
 
 .single-item li {
   padding: .5rem 1rem;
@@ -258,6 +276,7 @@ div {
     opacity: 1; } }
 
 nav {
+  z-index: 250;
   border-bottom: 2px double #222;
   padding: 6px;
   display: flex;
@@ -291,7 +310,6 @@ nav {
     width: 2rem; }
 
 .window {
-  margin: auto;
   display: inline-block;
   background: var(--white);
   width: 450px;
@@ -316,10 +334,11 @@ nav {
 
 .margin-container {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  top: 100px; }
+  top: 100px;
+  left: 100px; }
+  @media only screen and (max-width: 600px) {
+    .margin-container {
+      left: 28px; } }
 
 header {
   border-top: 2px double #222;

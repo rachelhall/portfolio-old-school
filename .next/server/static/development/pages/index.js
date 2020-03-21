@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -618,10 +618,30 @@ const ReusableWindow = ({
   windowOpen,
   id,
   zIndex,
-  setWindowOpen
+  setWindowOpen,
+  i
 }) => {
-  // const ctx = useContext(IdCTX);
-  // console.log(`ctx.id: ${ctx.id}`);
+  const isEven = i => {
+    if (i % 2 == 0) return true;else return false;
+  };
+
+  let topMarginIncrement;
+  let leftMarginIncrement;
+
+  const setMargins = () => {
+    if (isEven(i)) {
+      topMarginIncrement = i * 25;
+      leftMarginIncrement = i * 25;
+    } else {
+      topMarginIncrement = i * -10;
+      leftMarginIncrement = i * -25;
+    }
+  };
+
+  setMargins(i);
+  console.log({
+    topMarginIncrement
+  });
   let filteredArray = windowOpen.filter(item => item != id);
 
   const closeWindow = () => {
@@ -631,11 +651,13 @@ const ReusableWindow = ({
   return __jsx("div", {
     className: "margin-container",
     style: {
-      zIndex: `${zIndex}`
+      zIndex: `${zIndex}`,
+      marginTop: `${topMarginIncrement}px`,
+      marginLeft: `${leftMarginIncrement}px`
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 48
     },
     __self: undefined
   }, windowOpen.includes(id) ? // === `${title}open`
@@ -652,19 +674,19 @@ const ReusableWindow = ({
     className: background ? `window ${background}-background` : `window`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 58
     },
     __self: undefined
   }, header ? __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 65
     },
     __self: undefined
   }, __jsx("header", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 66
     },
     __self: undefined
   }, __jsx("p", {
@@ -672,33 +694,33 @@ const ReusableWindow = ({
     onClick: closeWindow,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 67
     },
     __self: undefined
   }, "\u2716"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 70
     },
     __self: undefined
   }, title)), __jsx("div", {
     className: "body-content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 72
     },
     __self: undefined
   }, bodyContent.component)) : __jsx("div", {
     className: "body-content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 75
     },
     __self: undefined
   }, bodyContent.component)) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 79
     },
     __self: undefined
   }));
@@ -731,12 +753,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IdCTX", function() { return IdCTX; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _pages_home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../pages/home */ "./pages/home/index.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.scss */ "./components/singleIcon/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "framer-motion");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages_home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../pages/home */ "./pages/home/index.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.scss */ "./components/singleIcon/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/thomasharbin/Documents/GitHub/portfolio-old-school/components/singleIcon/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -749,7 +774,7 @@ const SingleIcon = ({
   zIndex,
   id
 }) => {
-  const ctx = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_home__WEBPACK_IMPORTED_MODULE_1__["WindowCTX"]);
+  const ctx = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_home__WEBPACK_IMPORTED_MODULE_2__["WindowCTX"]);
 
   const handleClickWindow = () => {
     // ctx.setWindowOpen(true);
@@ -762,7 +787,7 @@ const SingleIcon = ({
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 18
     },
     __self: undefined
   }, __jsx(IdCTX.Provider, {
@@ -771,30 +796,33 @@ const SingleIcon = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: undefined
-  }, __jsx("div", {
+  }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     className: "single-icon",
     onClick: handleClickWindow,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 21
     },
     __self: undefined
-  }, __jsx("img", {
+  }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].img, {
+    whileHover: {
+      scale: 1.1
+    },
     src: iconUrl,
     alt: title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 22
     },
     __self: undefined
   }), __jsx("p", {
     className: "icon-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     },
     __self: undefined
   }, title))));
@@ -852,17 +880,17 @@ const SingleSite = () => {
     },
     __self: undefined
   }, _data_js__WEBPACK_IMPORTED_MODULE_2__["sites"].map((site, i) => {
-    return __jsx("li", {
-      key: i,
+    return __jsx("a", {
+      href: site.url,
+      target: "_blank",
+      className: "singleItem-link",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 12
       },
       __self: undefined
-    }, __jsx("a", {
-      href: site.url,
-      target: "_blank",
-      className: "singleItem-link",
+    }, __jsx("li", {
+      key: i,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13
@@ -1078,7 +1106,7 @@ const windowData = [{
   background: "",
   id: '01z'
 }, {
-  title: "Websites",
+  title: "Web Portfolio",
   header: true,
   icon: "/icon/folder.png",
   bodyContent: {
@@ -1108,7 +1136,7 @@ const windowData = [{
   background: "",
   id: "03z"
 }, {
-  title: "Movies",
+  title: "Video Portfolio",
   header: true,
   icon: "/icon/video.png",
   bodyContent: {
@@ -1252,27 +1280,38 @@ const Home = () => {
       lineNumber: 51
     },
     __self: undefined
-  }, __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx("div", {
+    className: "desktop",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 63
     },
     __self: undefined
-  }), _data_js__WEBPACK_IMPORTED_MODULE_6__["default"].map((window, i) => {
+  }, __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: undefined
+  }), canDrag ? _data_js__WEBPACK_IMPORTED_MODULE_6__["default"].map((window, i) => {
     return __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-      drag: true,
-      dragMomentum: false,
-      dragConstraints: {
-        left: -300,
-        top: -50,
-        bottom: 500,
-        right: 300
+      initial: {
+        y: 0,
+        x: 0
       },
+      drag: true,
+      dragMomentum: false // dragConstraints={{
+      //   left: -300,
+      //   top: -50,
+      //   bottom: 500,
+      //   right: 300
+      // }}
+      ,
       className: "window-container",
       key: `${i}2`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 85
       },
       __self: undefined
     }, __jsx(_components_reusableWindow__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1286,9 +1325,37 @@ const Home = () => {
       key: `${i}23`,
       zIndex: zIndex,
       id: window.id,
+      i: i,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 98
+      },
+      __self: undefined
+    }));
+  }) : _data_js__WEBPACK_IMPORTED_MODULE_6__["default"].map((window, i) => {
+    return __jsx("div", {
+      className: "window-container",
+      key: `${i}2`,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 115
+      },
+      __self: undefined
+    }, __jsx(_components_reusableWindow__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      title: window.title,
+      header: window.header,
+      bodyContent: window.bodyContent,
+      background: window.background,
+      windowOpen: windowOpen,
+      setWindowOpen: setWindowOpen,
+      changeWallpaper: changeWallpaper,
+      key: `${i}23`,
+      zIndex: zIndex,
+      id: window.id,
+      i: i,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 120
       },
       __self: undefined
     }));
@@ -1297,20 +1364,18 @@ const Home = () => {
     ref: iconConstraints,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 138
     },
     __self: undefined
-  }, __jsx(_components_icons__WEBPACK_IMPORTED_MODULE_3__["default"] // setWindowOpen={setWindowOpen}
-  // windowOpen={windowOpen}
-  , {
+  }, __jsx(_components_icons__WEBPACK_IMPORTED_MODULE_3__["default"], {
     zIndex: zIndex,
     setZIndex: setZIndex,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 139
     },
     __self: undefined
-  })))));
+  }))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
@@ -1346,7 +1411,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

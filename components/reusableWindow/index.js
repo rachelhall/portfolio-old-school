@@ -14,10 +14,30 @@ const ReusableWindow = ({
   windowOpen,
   id,
   zIndex,
-  setWindowOpen
+  setWindowOpen,
+  i
 }) => {
-  // const ctx = useContext(IdCTX);
-  // console.log(`ctx.id: ${ctx.id}`);
+  const isEven = i => {
+    if (i % 2 == 0) return true;
+    else return false;
+  };
+
+  let topMarginIncrement;
+  let leftMarginIncrement;
+
+  const setMargins = () => {
+    if (isEven(i)) {
+      topMarginIncrement = i * 25;
+      leftMarginIncrement = i * 25;
+    } else {
+      topMarginIncrement = i * -10;
+      leftMarginIncrement = i * -25;
+    }
+  };
+
+  setMargins(i);
+
+  console.log({ topMarginIncrement });
 
   let filteredArray = windowOpen.filter(item => item != id);
   const closeWindow = () => {
@@ -25,7 +45,14 @@ const ReusableWindow = ({
   };
 
   return (
-    <div className="margin-container" style={{ zIndex: `${zIndex}` }}>
+    <div
+      className="margin-container"
+      style={{
+        zIndex: `${zIndex}`,
+        marginTop: `${topMarginIncrement}px`,
+        marginLeft: `${leftMarginIncrement}px`
+      }}
+    >
       {windowOpen.includes(id) ? (
         // === `${title}open`
         <motion.div

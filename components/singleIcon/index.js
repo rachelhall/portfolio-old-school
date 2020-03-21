@@ -1,4 +1,5 @@
 import { Fragment, useContext, createContext } from "react";
+import { motion } from "framer-motion"
 import { WindowCTX } from "../../pages/home";
 import "./styles.scss";
 
@@ -17,10 +18,10 @@ const SingleIcon = ({ title, iconUrl, setZIndex, zIndex, id }) => {
     <Fragment>
       <IdCTX.Provider
       value={{ id: id }}>
-        <div className="single-icon" onClick={handleClickWindow}>
-          <img src={iconUrl} alt={title} />
+        <motion.div className="single-icon" onClick={handleClickWindow}>
+          <motion.img whileHover={{scale: 1.1}} src={iconUrl} alt={title} />
           <p className="icon-title">{title}</p>
-        </div>
+        </motion.div>
       </IdCTX.Provider>
     </Fragment>
   );

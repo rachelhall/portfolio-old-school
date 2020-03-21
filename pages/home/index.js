@@ -60,9 +60,10 @@ const Home = () => {
               : "entire-display"
           }
         >
-          <Nav />
+          <div className="desktop">
+            <Nav />
 
-          {/* {canDrag ? (
+            {/* {canDrag ? (
           <motion.div
           drag
           dragMomentum={false}
@@ -79,44 +80,68 @@ const Home = () => {
             <Window />
           )} */}
 
-          {windowData.map((window, i) => {
-            return (
-              <motion.div
-                drag
-                dragMomentum={false}
-                dragConstraints={{
-                  left: -300,
-                  top: -50,
-                  bottom: 500,
-                  right: 300
-                }}
-                className="window-container"
-                key={`${i}2`}
-              >
-                <ReusableWindow
-                  title={window.title}
-                  header={window.header}
-                  bodyContent={window.bodyContent}
-                  background={window.background}
-                  windowOpen={windowOpen}
-                  setWindowOpen={setWindowOpen}
-                  changeWallpaper={changeWallpaper}
-                  key={`${i}23`}
-                  zIndex={zIndex}
-                  id={window.id}
-                />
-              </motion.div>
-            );
-          })}
+            {canDrag ? windowData.map((window, i) => {
+              return (
+                <motion.div
+                  initial={{ y: 0, x: 0 }}
+                  drag
+                  dragMomentum={false}
+                  // dragConstraints={{
+                  //   left: -300,
+                  //   top: -50,
+                  //   bottom: 500,
+                  //   right: 300
+                  // }}
+                  className="window-container"
+                  key={`${i}2`}
+                >
+                  <ReusableWindow
+                    title={window.title}
+                    header={window.header}
+                    bodyContent={window.bodyContent}
+                    background={window.background}
+                    windowOpen={windowOpen}
+                    setWindowOpen={setWindowOpen}
+                    changeWallpaper={changeWallpaper}
+                    key={`${i}23`}
+                    zIndex={zIndex}
+                    id={window.id}
+                    i={i}
+                  />
+                </motion.div>
+              );
+            }) : windowData.map((window, i) => {
+              return (
+                <div
+                  
+                  className="window-container"
+                  key={`${i}2`}
+                >
+                  <ReusableWindow
+                    title={window.title}
+                    header={window.header}
+                    bodyContent={window.bodyContent}
+                    background={window.background}
+                    windowOpen={windowOpen}
+                    setWindowOpen={setWindowOpen}
+                    changeWallpaper={changeWallpaper}
+                    key={`${i}23`}
+                    zIndex={zIndex}
+                    id={window.id}
+                    i={i}
+                  />
+                </div>
+              );
+            })
+            }
 
-          <motion.div className="icons-container" ref={iconConstraints}>
-            <Icons
-              // setWindowOpen={setWindowOpen}
-              // windowOpen={windowOpen}
-              zIndex={zIndex}
-              setZIndex={setZIndex}
-            />
-          </motion.div>
+            <motion.div className="icons-container" ref={iconConstraints}>
+              <Icons
+                zIndex={zIndex}
+                setZIndex={setZIndex}
+              />
+            </motion.div>
+          </div>
         </motion.div>
       </WindowCTX.Provider>
     </Fragment>

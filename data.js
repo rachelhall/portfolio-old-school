@@ -13,7 +13,7 @@ const windowData = [
     id: '01z'
   },
   {
-    title: "Websites",
+    title: "Web Portfolio",
     header: true,
     icon: "/icon/folder.png",
     bodyContent: { component: <SingleSite /> },
@@ -29,7 +29,7 @@ const windowData = [
     id: "03z"
   },
   {
-    title: "Movies",
+    title: "Video Portfolio",
     header: true,
     icon: "/icon/video.png",
     bodyContent: { component: <Movies /> },
