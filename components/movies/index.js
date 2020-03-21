@@ -1,12 +1,10 @@
 import { useState, useEffect, Fragment } from "react";
-import PropTypes from "prop-types";
-import plyr from "plyr";
 
 // components
 import MovieModal from "../../components/movieModal";
 
 // styles
-import "./styles.module.scss";
+import "./styles.scss";
 
 // data
 import { movies } from "../../data";
@@ -22,11 +20,7 @@ const Movies = () => {
   return (
     <Fragment>
       {modalOpen ? (
-        <MovieModal
-          toggleModalOpen={toggleModalOpen}
-          videoId={videoId}
-          setVideoId={setVideoId}
-        />
+        <MovieModal toggleModalOpen={toggleModalOpen} videoId={videoId} />
       ) : (
         <div></div>
       )}
@@ -36,12 +30,12 @@ const Movies = () => {
             return (
               <Fragment>
                 <li
+                  key={`${i}13`}
                   className="singleItem-link"
-                  onClick={
-                    toggleModalOpen
-                    //, setVideoId(item.url)
-                  }
-                  key={i}
+                  onClick={() => {
+                    setVideoId(item.url);
+                    setModalOpen(!modalOpen);
+                  }}
                 >
                   {item.name}
                 </li>

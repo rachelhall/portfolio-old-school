@@ -1,20 +1,60 @@
-import { Fragment } from "react";
+import { Fragment, useContext, useState } from "react";
 import { motion } from "framer-motion";
 
 import "./styles.scss";
 
+// import windowData from "../../data"
+import { IdCTX } from "../../components/singleIcon";
+
 const ReusableWindow = ({
-  closeWindow,
   title,
   bodyContent,
-  windowOpen,
   background,
-  header
+  header,
+  windowOpen,
+  id,
+  zIndex,
+  setWindowOpen,
+  i
 }) => {
-  // const blackBackground = true;
+  const isEven = i => {
+    if (i % 2 == 0) return true;
+    else return false;
+  };
+
+  let topMarginIncrement;
+  let leftMarginIncrement;
+
+  const setMargins = () => {
+    if (isEven(i)) {
+      topMarginIncrement = i * 25;
+      leftMarginIncrement = i * 25;
+    } else {
+      topMarginIncrement = i * -10;
+      leftMarginIncrement = i * -25;
+    }
+  };
+
+  setMargins(i);
+
+  console.log({ topMarginIncrement });
+
+  let filteredArray = windowOpen.filter(item => item != id);
+  const closeWindow = () => {
+    setWindowOpen(filteredArray);
+  };
+
   return (
-    <div className="margin-container">
-      {windowOpen === `${title}open` ? (
+    <div
+      className="margin-container"
+      style={{
+        zIndex: `${zIndex}`,
+        marginTop: `${topMarginIncrement}px`,
+        marginLeft: `${leftMarginIncrement}px`
+      }}
+    >
+      {windowOpen.includes(id) ? (
+        // === `${title}open`
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}

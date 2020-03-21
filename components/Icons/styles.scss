@@ -1,4 +1,9 @@
 .icons-container {
     display: flex;
     align-items: flex-end;
+    @media only screen and (max-width: 600px) {
+        flex-wrap: wrap;
+        max-width: 500px;
+        margin-bottom: 50px;
+      } 
 }

@@ -19,6 +19,8 @@
     cursor: default;
 }
 
+
+
 .black-background {
     background:#222;
     color: var(--retro-green);
@@ -26,7 +28,12 @@
 }
 
 .margin-container {
-    margin: auto;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    @media only screen and (max-width: 600px) {
+        left: 28px;
+      }
 }
 
 header {

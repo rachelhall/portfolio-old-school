@@ -1,7 +1,7 @@
 // styles
 import "./styles.scss";
 
-import { sites } from "../../data.js"
+import { sites } from "../../data.js";
 
 const SingleSite = () => {
   return (
@@ -9,11 +9,9 @@ const SingleSite = () => {
       <ul className="singleItem-list">
         {sites.map((site, i) => {
           return (
-            <li key={i}>
-              <a href={site.url} target="_blank" className="singleItem-link">
-                {site.name}
-              </a>
-            </li>
+            <a href={site.url} target="_blank" className="singleItem-link">
+              <li key={i}>{site.name}</li>
+            </a>
           );
         })}
       </ul>

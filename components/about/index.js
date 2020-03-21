@@ -7,6 +7,7 @@ const About = () => {
   return (
     <Fragment>
       <div className="about">
+        {/* <iframe src="https://thomasharbin.netlify.com/" height="425" width="300" frameborder="2" style={{margin: "auto"}}></iframe> */}
         <h1>Thomas Harbin: Front End Developer</h1>
         <h2>Favorites:</h2>
         <br />

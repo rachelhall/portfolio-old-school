@@ -6,31 +6,35 @@ import Movies from "./components/movies";
 const windowData = [
   {
     title: "About",
-    header: false,
-    icon: "/icon/thomas-icon.png",
+    header: true,
+    icon: "/icon/thomas-pixelated.png",
     bodyContent: { component: <About /> },
-    background: "black"
+    background: "",
+    id: '01z'
   },
   {
-    title: "Websites",
+    title: "Web Portfolio",
     header: true,
     icon: "/icon/folder.png",
     bodyContent: { component: <SingleSite /> },
-    background: ""
+    background: "",
+    id: "02z"
   },
   {
     title: "Preferences",
     header: true,
     icon: "/icon/mac.png",
     bodyContent: { component: <Wallpaper /> },
-    background: ""
+    background: "",
+    id: "03z"
   },
   {
-    title: "Movies",
+    title: "Video Portfolio",
     header: true,
     icon: "/icon/video.png",
     bodyContent: { component: <Movies /> },
-    background: ""
+    background: "",
+    id: "04z"
   }
 ];
 
